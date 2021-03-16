@@ -8,3 +8,4 @@
 [komentorivi.txt](https://github.com/jupouta/ohjelmistotekniikka/blob/master/laskarit/viikko1/komentorivi.txt)
 
 ### Viikko 2
+muutetaan tekstiä
