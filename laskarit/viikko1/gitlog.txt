@@ -1,0 +1,113 @@
+commit a3d8fc45caadf5faa3e187aa60c06a20480859a5
+Author: Julia <juliapoutanen@gmail.com>
+Date:   Tue Mar 16 11:30:35 2021 +0200
+
+    poista file1, file2 -> file22
+
+ laskarit/viikko1/tiedostoja/file2             | 0
+ laskarit/viikko1/tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 3507850ce1585d3b5581c9f9df0b44b42cc3c071
+Author: Julia <juliapoutanen@gmail.com>
+Date:   Tue Mar 16 11:27:13 2021 +0200
+
+    lisää tiedostoja ja tiedostot
+
+ laskarit/viikko1/tiedostoja/file1 | 0
+ laskarit/viikko1/tiedostoja/file2 | 0
+ laskarit/viikko1/tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 84ae0b14af11ddbc6b27552afbfc36c3c2684d65
+Author: Julia <juliapoutanen@gmail.com>
+Date:   Tue Mar 16 11:22:19 2021 +0200
+
+    eka ja kolmas: muuta ja lisää
+
+ laskarit/viikko1/eka.txt    | 2 +-
+ laskarit/viikko1/kolmas.txt | 6 +++++-
+ 2 files changed, 6 insertions(+), 2 deletions(-)
+
+commit 2b5cd86042520d7e6bf74881c3f1004df443d75f
+Author: Julia <juliapoutanen@gmail.com>
+Date:   Tue Mar 16 11:20:14 2021 +0200
+
+    muuta tiedosto -> eka
+
+ laskarit/viikko1/{tiedosto.txt => eka.txt} | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 4a9bb5df3c59d0adf1a2c3714f9f1a715852d607
+Author: Julia <juliapoutanen@gmail.com>
+Date:   Tue Mar 16 11:19:03 2021 +0200
+
+    poista toinen
+
+ laskarit/viikko1/toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 2b30205f2dabd53c50d646b992e47cdb23a772ab
+Author: Julia <juliapoutanen@gmail.com>
+Date:   Tue Mar 16 11:18:19 2021 +0200
+
+    poista ja lisää
+
+ laskarit/viikko1/tiedosto.txt | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+commit 0721b44551817c31918447fbc9d348997c3814be
+Author: Julia <juliapoutanen@gmail.com>
+Date:   Tue Mar 16 11:17:31 2021 +0200
+
+    lisää tekstiä tiedostoon
+
+ laskarit/viikko1/tiedosto.txt | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+commit 9522cf3bd0023bbfc94f70f87c358c71d16366fe
+Author: Julia <juliapoutanen@gmail.com>
+Date:   Tue Mar 16 11:13:11 2021 +0200
+
+    lisää stuff ja tiedosto
+
+ laskarit/viikko1/stuff/jokin.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 8b2cbb85dcc75dd06457b3d01b6112fde5eec1ea
+Author: Julia <juliapoutanen@gmail.com>
+Date:   Tue Mar 16 11:12:02 2021 +0200
+
+    muuta toista ja kolmatta
+
+ laskarit/viikko1/kolmas.txt | 1 +
+ laskarit/viikko1/toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit 177d3c5fb239888e8b3af6a19c8ee7514f690279
+Author: Julia <juliapoutanen@gmail.com>
+Date:   Tue Mar 16 11:11:12 2021 +0200
+
+    kolmas luotu
+
+ laskarit/viikko1/kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 0e1d9cb75f5692d3aa5b9a3787f06206047e099f
+Author: Julia <juliapoutanen@gmail.com>
+Date:   Tue Mar 16 11:08:17 2021 +0200
+
+    muutos ja lisäys
+
+ laskarit/viikko1/tiedosto.txt | 1 +
+ laskarit/viikko1/toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 055a6df9920731685c571af76cc3e0071bf2c1d9
+Author: Julia <juliapoutanen@gmail.com>
+Date:   Tue Mar 16 11:04:55 2021 +0200
+
+    tiedosto.txt luotu
+
+ laskarit/viikko1/tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
