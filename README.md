@@ -9,3 +9,6 @@
 
 ### Viikko 2
 muutetaan tekstiä
+
+### Tuntikirjanpito
+[Linkki tuntikirjanpitoon](https://github.com/jupouta/ohjelmistotekniikka/blob/master/havikkisovellus/dokumentaatio/tuntikirjanpito.md)
