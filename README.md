@@ -11,4 +11,4 @@
 [Määrittelydokumentti](https://github.com/jupouta/ohjelmistotekniikka/blob/master/dokumentaatio/maarittelydokumentti.md)
 
 ### Tuntikirjanpito
-[Linkki tuntikirjanpitoon](https://github.com/jupouta/ohjelmistotekniikka/blob/master/havikkisovellus/dokumentaatio/tuntikirjanpito.md)
+[Tuntikirjanpito](https://github.com/jupouta/ohjelmistotekniikka/blob/master/dokumentaatio/tuntikirjanpito.md)
