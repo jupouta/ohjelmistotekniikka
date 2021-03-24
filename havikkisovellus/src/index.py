@@ -5,4 +5,5 @@ def main():
     new_ui = UI()
     new_ui.start()
 
-main()
+if __name__ == '__main__':
+    main()
