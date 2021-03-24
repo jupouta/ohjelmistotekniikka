@@ -4,4 +4,4 @@ __pycache__/
 *.coverage
 *htmlcov
 
-data/database.sqlite
+havikkisovellus/data/database.sqlite
