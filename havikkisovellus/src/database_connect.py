@@ -1,8 +1,9 @@
 import os
 import sqlite3
 
-directory_name = os.path.dirname(__file__)
-connection = sqlite3.connect(os.path.join(directory_name, "data", "database.sqlite"))
+dirname = os.path.dirname(__file__)
+file_name = os.path.join(dirname, "..", "data", "database.sqlite")
+connection = sqlite3.connect(file_name)
 connection.row_factory = sqlite3.Row
 
 def get_database_connection():

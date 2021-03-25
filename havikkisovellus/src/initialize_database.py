@@ -1,4 +1,4 @@
-from sqlite3.dbapi2 import connect
+
 from database_connect import get_database_connection
 
 
@@ -7,6 +7,9 @@ def drop_tables(connection):
 
     cursor.execute('''
         drop table if exists foodtable;
+    ''')
+    cursor.execute('''
+        drop table if exists food;
     ''')
     cursor.execute('''
         drop table if exists mytable;
@@ -18,21 +21,21 @@ def create_tables(connection):
     cursor = connection.cursor()
 
     cursor.execute('''
-        create table foodtable (
+        create table food (
             id text primary key,
-            column text
+            ingredient text
         );
     ''')
 
     connection.commit()
 
-def initialize():
+def initialize_database():
     connection = get_database_connection()
 
     drop_tables(connection)
     create_tables(connection)
     
-    connection.close()
+    #connection.close()
 
-if __name__ == "__main__":
-    initialize()
+#if __name__ == '__main__':
+#    initialize()

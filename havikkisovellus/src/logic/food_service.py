@@ -1,12 +1,22 @@
 from datetime import date
 
 from entities.ingredient import Ingredient
+from database_connect import get_database_connection
 
 
 class FoodService:
     
     def __init__(self):
         self.ingredients = []
+        self.__connection = get_database_connection()
+        cursor = self.__connection.cursor()
+
+        cursor.execute('''
+            insert into food (id, ingredient) values (1, 'tomaatti');
+        ''')
+
+        self.__connection.commit()
+        self.__connection.close()
     
     def add_ingredient(self):
         name = input('Ingredient name: ')
