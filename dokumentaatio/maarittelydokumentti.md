@@ -1,13 +1,10 @@
 ## Vaatimusmäärittely
 
 ### Sovelluksen tarkoitus
-Käyttäjä voi kirjata hävikkisovellukseen ruoka-aineksia, joiden vanhenemisesta sovellus ilmoittaa käyttäjän kirjautuessaan sisään. Hävikkisovelluksen avulla käyttäjän on mahdollista vähentää tulevaa ruokahävikkiä.
+Käyttäjä voi kirjata hävikkisovellukseen ruoka-aineksia, joiden vanhenemisesta sovellus ilmoittaa käyttäjän kirjautuessa sisään. Hävikkisovelluksen avulla käyttäjän on mahdollista vähentää tulevaa ruokahävikkiä.
 
 ### Käyttäjät
 Sovelluksella on tällä hetkellä vain yksi käyttäjärooli, normaali käyttäjä.
-
-
-### Käyttöliittymäluonnos
 
 ### Sovelluksen toiminnallisuuksia
 
@@ -19,10 +16,10 @@ Sovelluksella on tällä hetkellä vain yksi käyttäjärooli, normaali käyttä
 - Käyttäjä voi merkitä ruoka-aineksen syödyksi (ja samalla se katoaa listalta)
 
 ### Jatkokehitysideoita
-- listalle lisättyjen ruoka-ainesten tietojen muokkaus (esim. vanhenemispäivän muuttaminen)
-- reseptien liittäminen tiettyihin ruoka-aineksiin
-- ruoka-ainesta lisättäessä voisi olla kenttä, johon annetaan lisätietoa aineksesta
+- Listalle lisättyjen ruoka-ainesten tietojen muokkaus (esim. vanhenemispäivän muuttaminen)
+- Reseptien liittäminen tiettyihin ruoka-aineksiin
+- Ruoka-ainesta lisättäessä voisi olla kenttä, johon annetaan lisätietoa aineksesta
 
 ### Toimintaympäristön rajoitteet
 
-Sovelluksen tulee toimia Linux- ja OS X -käyttöjärjestelmissä. Käyttäjien ja ruoka-ainesten tiedot talletetaan paikallisesti (?).
+Sovelluksen tulee toimia Linux- ja OS X -käyttöjärjestelmissä. Käyttäjien ja ruoka-ainesten tiedot talletetaan paikallisesti.
