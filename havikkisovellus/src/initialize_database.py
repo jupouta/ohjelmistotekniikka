@@ -22,8 +22,10 @@ def create_tables(connection):
 
     cursor.execute('''
         create table food (
-            id text primary key,
-            ingredient text
+            id integer primary key autoincrement,
+            ingredient text,
+            perishable boolean,
+            date text
         );
     ''')
 

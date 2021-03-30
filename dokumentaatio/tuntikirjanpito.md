@@ -7,3 +7,5 @@
 | 23.3. | 1,5  | koodin pohjan rakentamista|
 | 24.3. | 2    | ui - logiikka - kanta     |
 | 25.3. | 1,5  | kannan integrointia       |
+| 29.3. | 1    | serviceä lisää + määrittelydokkari |
+| 30.3. | 1    | tietokantaa               |

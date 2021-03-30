@@ -7,25 +7,26 @@ from database_connect import get_database_connection
 class FoodService:
     
     def __init__(self):
-        self.ingredients = []
+        self.date_today = date.today()
+        
         self.__connection = get_database_connection()
-        cursor = self.__connection.cursor()
+        self.cursor = self.__connection.cursor()
 
-        cursor.execute('''
-            insert into food (id, ingredient) values (1, 'tomaatti');
+        self.cursor.execute('''
+            insert into food (ingredient, perishable, date) values ('tomaatti', true, '2021-3-25');
         ''')
 
         self.__connection.commit()
-        self.__connection.close()
     
     def add_ingredient(self):
         name = input('Ingredient name: ')
         perishable = input('Is it easily perishable? (yes/no) ')
         perishable_handled = self.add_ingredient_perishable_info(perishable)
-        date_today = date.today()
         
-        new_ingredient = Ingredient(name, perishable_handled, date_today)
-        self.ingredients.append(new_ingredient)
+        new_ingredient = Ingredient(name, perishable_handled, self.date_today)   # TODO
+        self.cursor.execute("insert into food (ingredient, perishable, date) values (?, ?, ?);",
+                            (name, perishable_handled, self.date_today))
+        self.__connection.commit()
     
     def add_ingredient_perishable_info(self, perishable):
         perishable_handled = None
@@ -38,5 +39,19 @@ class FoodService:
         return perishable_handled
 
     def list_added_ingredients(self):
-        for ingredient in self.ingredients:
-            print(f'- {ingredient.content}')
+        self.cursor.execute("select * from food;")
+        for row in self.cursor:
+            print(f'{row[0]}: {row[1]} {row[3]}')
+        
+        self.show_soon_perishable_ingredients()
+    
+    def show_soon_perishable_ingredients(self):
+        self.cursor.execute("select * from food;")
+        
+        for row in self.cursor:
+            row_date = row[3]
+            string_today = str(self.date_today)
+            print(string_today > row_date)
+    
+    def stop_service(self):
+        self.__connection.close()
