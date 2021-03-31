@@ -22,6 +22,7 @@ class UI:
                 self.print_commands()
             elif given_command == 'stop':
                 self.food_service.stop_service()
+                print('Bye!')
                 break
             else:
                 print('Something happened.. Please write again.')
