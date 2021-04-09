@@ -1,64 +1,44 @@
 import time
-import datetime 
 
 from entities.ingredient import Ingredient
+from database import Database
+
 from database_connect import get_database_connection
 
 
 class FoodService:
     
     def __init__(self):
+        self.database = Database()
         self.__connection = get_database_connection()
         self.cursor = self.__connection.cursor()
-
-        self.cursor.execute('''
-            insert into users (username,password) values ('paltu', 'paltu123');
-        ''')
-        
-        self.cursor.execute('''
-            insert into food (date, exp_date, ingredient, username) values (1617176770,1617176770, 'tomaatti', 'paltu');
-        ''')
-
-        self.__connection.commit()
     
-    def add_ingredient(self):
-        name = input('Ingredient name: ')
-        perishable = input('Is it easily perishable? (yes/no) ')
-        perishable_handled = self.add_ingredient_perishable_info(perishable)
-        time_time = int(time.time())
-        
-        new_ingredient = Ingredient(name, perishable_handled, time_time)   # TODO
-        self.cursor.execute("insert into food (date, ingredient, perishable) values (?, ?, ?);",
-                            (time_time, name, perishable_handled))
-        self.__connection.commit()
-    
-    def add_ingredient_perishable_info(self, perishable):
-        perishable_handled = None
-        if perishable == 'yes':
-            perishable_handled = True
-        elif perishable == 'no':
-            perishable_handled = False
-        else:
-            perishable_handled = input('Please write \'yes\' or \'no\'.')
-        return perishable_handled
+    def add_ingredient(self, name, perishable, date):
+        self.database.insert_a_new_ingredient(date, name, perishable, 'testi')
 
     def list_added_ingredients(self):
-        self.cursor.execute("select ingredient, date from food;")
-        
-        
-        for row in self.cursor:
-            print(f'{row[0]}: {row[1]}')
-            print(datetime.datetime.fromtimestamp(row[1]))
+        data = self.database.get_all_ingredients_by_a_user('testi')
 
+        ingredients = []
+        for row in data:
+            ingrdnt, date_added = row[0], row[1]
+            ingredient = Ingredient(ingrdnt, date_added)
+            ingredients.append(ingredient)
+            
+        return ingredients
     
+    # TODO: combine with upper one?
     def show_soon_perishable_ingredients(self):
-        self.cursor.execute("select * from food;")
-        
-        for row in self.cursor:
-            row_date = int(row[3])
-            print(row_date < time.time())
-            print(time.localtime(row_date))
-            # TODO: luokka, jossa vaihdetaan
+        data = self.database.get_all_ingredients_by_a_user('testi')
+
+        ingredients = []
+        for row in data:
+            ingrdnt, date_added = row[0], row[1]
+            ingredient = Ingredient(ingrdnt, date_added)
+            
+            if ingredient.is_close_to_perishing():
+                ingredients.append(ingredient)
+        return ingredients
     
     def stop_service(self):
         self.__connection.close()

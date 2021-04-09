@@ -1,3 +1,5 @@
+import time
+
 from logic.food_service import FoodService
 
 class UI:
@@ -15,9 +17,9 @@ class UI:
             given_command = input('Write your command: ')
             
             if given_command == 'list':
-                self.food_service.list_added_ingredients()
+                self.list_added_ingredients()
             elif given_command == 'add':
-                self.food_service.add_ingredient()
+                self.add_new_ingredient()
             elif given_command == 'print':
                 self.print_commands()
             elif given_command == 'stop':
@@ -26,6 +28,30 @@ class UI:
                 break
             else:
                 print('Something happened.. Please write again.')
+    
+    def list_added_ingredients(self):
+        ingredients = self.food_service.list_added_ingredients()
+        for ingredient in ingredients:
+            print(ingredient)
+        
+    def add_new_ingredient(self):
+        name = input('Ingredient name: ')
+        perishable = self.add_ingredient_perishable_info()
+        date = int(time.time())
+        self.food_service.add_ingredient(name, perishable, date)
+    
+    def add_ingredient_perishable_info(self):
+        perishable = input('Is it easily perishable? (yes/no) ')
+
+        # TODO
+        if perishable in ['yes', 'y']:
+            date = int(time.time())
+        elif perishable in ['no', 'n']:
+            date = int(time.time())
+        else:
+            perishable_handled = input('Please write \'yes\' or \'no\'.')
+            date = int(time.time())
+        return date
     
     def print_commands(self):
         print('Commands:')

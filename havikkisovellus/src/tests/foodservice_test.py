@@ -5,7 +5,5 @@ from logic.food_service import FoodService
 class TestFoodService(unittest.TestCase):
     
     def setUp(self):
-        pass
+        self.food_service = FoodService()
     
-    def test_test(self):
-        self.assertTrue(True)

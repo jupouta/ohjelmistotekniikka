@@ -10,3 +10,7 @@
 | 29.3. | 1    | serviceä lisää + määrittelydokkari |
 | 30.3. | 1    | tietokantaa               |
 | 31.3. | 1,5  | ajan esitys (epoch) + tietokanta |
+| 5.4.  | 1,5  | foodservice ja luokat |
+| 9.4.  |  1,5    | tietokanta omaksi luokaksi ja testejä |
+
+Tunnit yhteensä: 14h
