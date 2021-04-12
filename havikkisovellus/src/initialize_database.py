@@ -28,7 +28,7 @@ def create_tables(connection):
                 references users (username)
         );
     ''')
-    
+
     cursor.execute('''
         create table users (
             id integer primary key autoincrement,
@@ -44,7 +44,7 @@ def initialize_database():
 
     drop_tables(connection)
     create_tables(connection)
-    
+
     #connection.close()
 
 #if __name__ == '__main__':

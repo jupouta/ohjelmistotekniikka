@@ -1,14 +1,15 @@
 # Ohjelmistotekniikka-kurssin laskarit ja harjoitustyö
 
-## Tehtävät
+## Harjoitustyö: Hävikkisovellus
+Sovelluksen avulla käyttäjä voi vähentää ruoasta syntyvää hävikkiä. Sovellus muistuttaa käyttäjää vanhenevista ruoista.
 
-### Viikko 1
-[gitlog.txt](https://github.com/jupouta/ohjelmistotekniikka/blob/master/laskarit/viikko1/gitlog.txt)
+## Dokumentaatio
+- [Määrittelydokumentti](https://github.com/jupouta/ohjelmistotekniikka/blob/master/dokumentaatio/maarittelydokumentti.md)
+- [Tuntikirjanpito](https://github.com/jupouta/ohjelmistotekniikka/blob/master/dokumentaatio/tuntikirjanpito.md)
 
-[komentorivi.txt](https://github.com/jupouta/ohjelmistotekniikka/blob/master/laskarit/viikko1/komentorivi.txt)
+## Ohjeet
 
-### Viikko 2
-[Määrittelydokumentti](https://github.com/jupouta/ohjelmistotekniikka/blob/master/dokumentaatio/maarittelydokumentti.md)
+### Testaus
+Yksikkötestit saa ajettua komennolla `poetry run invoke test`.
 
-### Tuntikirjanpito
-[Tuntikirjanpito](https://github.com/jupouta/ohjelmistotekniikka/blob/master/dokumentaatio/tuntikirjanpito.md)
+Jos ohjelmaa haluaa testata, voi kirjautumiseen käyttää käyttäjää `testi` ja tälle salasanaa `salis`.

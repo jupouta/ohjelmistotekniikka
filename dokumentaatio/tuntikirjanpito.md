@@ -13,5 +13,7 @@
 | 5.4.  | 1,5  | foodservice ja luokat |
 | 9.4.  |  1,5    | tietokanta omaksi luokaksi |
 | 12.4. | 1 | testauksen pohja kuntoon |
+| | 1 | Pylint, README, muuta siivoamista |
+| | 1,5 | kirjautumisen perusversio, timestampejä, logiikan hiomista |
 
-Tunnit yhteensä: 15,5h
+Tunnit yhteensä: 18h
