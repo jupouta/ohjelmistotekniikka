@@ -4,8 +4,8 @@ from logic.food_service import FoodService
 
 class UI:
     
-    def __init__(self):
-        self.food_service = FoodService()
+    def __init__(self, food_service):
+        self.food_service = food_service
     
     def start(self):
         print('Starting food waste app..')
@@ -23,7 +23,7 @@ class UI:
             elif given_command == 'print':
                 self.print_commands()
             elif given_command == 'stop':
-                self.food_service.stop_service()
+                self.stop_service()
                 print('Bye!')
                 break
             else:
@@ -59,3 +59,6 @@ class UI:
         print('Add new ingredient - write \'add\'')
         print('Stop the program - write \'stop\'')
         print('Show the commands - write \'print\'')
+    
+    def stop_service(self):
+        self.food_service.stop_service()

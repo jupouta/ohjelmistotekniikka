@@ -1,6 +1,5 @@
 
 
-from entities.ingredient import Ingredient
 from database_connect import get_database_connection
 
 class Database:
@@ -23,10 +22,15 @@ class Database:
         ingredients = self.cursor.fetchall()
         return ingredients
     
-    def get_user(self):
-        pass
+    def get_user(self, username):
+        self.cursor.execute("select username, password from users where username=?;", (username, ))
+        user = self.cursor.fetchone()
+        return user
     
     def insert_a_new_ingredient(self, date, ingredient, perishable, username):
         self.cursor.execute("insert into food (date, ingredient, exp_date, username) values (?, ?, ?, ?);",
                             (date, ingredient, perishable, username))
         self.__connection.commit()
+    
+    def stop_service(self):
+        self.__connection.close()

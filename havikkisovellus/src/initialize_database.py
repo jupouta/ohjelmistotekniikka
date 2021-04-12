@@ -6,9 +6,6 @@ def drop_tables(connection):
     cursor = connection.cursor()
 
     cursor.execute('''
-        drop table if exists foodtable;
-    ''')
-    cursor.execute('''
         drop table if exists food;
     ''')
     cursor.execute('''

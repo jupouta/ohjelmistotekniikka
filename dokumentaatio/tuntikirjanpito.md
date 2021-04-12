@@ -11,6 +11,7 @@
 | 30.3. | 1    | tietokantaa               |
 | 31.3. | 1,5  | ajan esitys (epoch) + tietokanta |
 | 5.4.  | 1,5  | foodservice ja luokat |
-| 9.4.  |  1,5    | tietokanta omaksi luokaksi ja testejä |
+| 9.4.  |  1,5    | tietokanta omaksi luokaksi |
+| 12.4. | 1 | testauksen pohja kuntoon |
 
-Tunnit yhteensä: 14h
+Tunnit yhteensä: 15,5h
