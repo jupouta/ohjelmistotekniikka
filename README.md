@@ -9,7 +9,9 @@ Sovelluksen avulla käyttäjä voi vähentää ruoasta syntyvää hävikkiä. So
 
 ## Ohjeet
 
+### Ohjelman ajaminen
+Ohjelma toimii käynnistämällä virtuaaliympäristön `poetry shell` ja ajamalla sen jälkeen `poetry run invoke start`.
+Ohjelman testaamiseen voi käyttää kirjautumisessa käyttäjää `testi` ja tälle salasanaa `salis`.
+
 ### Testaus
 Yksikkötestit saa ajettua komennolla `poetry run invoke test`.
-
-Jos ohjelmaa haluaa testata, voi kirjautumiseen käyttää käyttäjää `testi` ja tälle salasanaa `salis`.
