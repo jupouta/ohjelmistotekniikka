@@ -9,12 +9,13 @@ class FoodService:
     def __init__(self, database):
         self.database = database
 
-    def check_username(self, username):
-        user = self.database.get_user(username)
+    def check_username(self, given_username, given_password):
+        user = self.database.get_user(given_username)
         if user:
-            return True
-        else:
-            return False
+            password = user[1]
+            if given_password == password:
+                return True
+        return False
 
     def check_date_form(self, date):
         if date == '':

@@ -17,10 +17,9 @@ class UI:
             given_username = input('Username: ')
             given_password = input('Password: ')
 
-            if self.food_service.check_username(given_username):
+            if self.food_service.check_username(given_username, given_password):
                 break
-            else:
-                print('Username not found!')
+            print('Username or password not found!')
 
         self.start_program()
 
@@ -39,7 +38,6 @@ class UI:
                 self.print_commands()
             elif given_command == 'stop':
                 self.stop_service()
-                print('Bye!')
                 break
             else:
                 print('Something happened.. Please write again.')
@@ -78,3 +76,4 @@ class UI:
 
     def stop_service(self):
         self.food_service.stop_service()
+        print('Bye!')

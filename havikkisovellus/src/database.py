@@ -1,5 +1,3 @@
-
-
 from database_connect import get_database_connection
 
 class Database:
@@ -18,7 +16,8 @@ class Database:
         self.__connection.commit()
 
     def get_all_ingredients_by_a_user(self, user):
-        self.cursor.execute("select ingredient, date, exp_date from food where username=?;", (user, ))
+        self.cursor.execute("select ingredient, date, exp_date from food where username=?;",
+                            (user, ))
         ingredients = self.cursor.fetchall()
         return ingredients
 
