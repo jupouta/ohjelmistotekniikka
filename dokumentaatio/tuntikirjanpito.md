@@ -15,5 +15,7 @@
 | 12.4. | 1 | testauksen pohja kuntoon |
 | | 1 | Pylint, README, muuta siivoamista |
 | | 1,5 | kirjautumisen perusversio, timestampejä, logiikan hiomista |
+| 16.4. | 2 | lisää toiminnallisuuksia |
+| | 0,5 | testit |
 
-Tunnit yhteensä: 18h
+Tunnit yhteensä: 20,5h

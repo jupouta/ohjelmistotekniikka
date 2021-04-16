@@ -33,5 +33,5 @@ class TestFoodService(unittest.TestCase):
         self.assertEqual(len(self.food_service.database.get_all()), 1)
 
     def test_list_added_ingredients(self):
-        ingredients = self.food_service.list_added_ingredients()
+        ingredients = self.food_service.list_added_ingredients('testi')
         self.assertEqual(len(ingredients), 2)

@@ -1,10 +1,11 @@
 import tkinter
 
 from ui.ui import UI
-from database import Database
-from logic.food_service import FoodService
 
-from initialize_database import initialize_database
+from database.database import Database
+from database.initialize_database import initialize_database
+
+from logic.food_service import FoodService
 
 def main():
     initialize_database()

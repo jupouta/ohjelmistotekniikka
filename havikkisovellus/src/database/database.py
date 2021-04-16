@@ -30,6 +30,21 @@ class Database:
         user = self.__cursor.fetchone()
         return user
 
+    def find_ingredient(self, username, ingredient_name):
+        self.__cursor.execute(
+            '''select ingredient, date, exp_date, used from food
+            where username=? and ingredient=?;''', (username, ingredient_name))
+        ingredient = self.__cursor.fetchone()
+        return ingredient
+
+    def mark_ingredient_as_eaten(self, username, ingredient_name):
+        self.__cursor.execute(
+            '''update food
+            set used=1
+            where username=? and ingredient=?;''', (username, ingredient_name))
+        ingredient = self.find_ingredient(username, ingredient_name)
+        return ingredient
+
     def insert_a_new_ingredient(self, date, ingredient, perishable, username):
         self.__cursor.execute(
             "insert into food (date, ingredient, exp_date, username) values (?, ?, ?, ?);",

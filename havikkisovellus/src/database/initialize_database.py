@@ -21,6 +21,7 @@ def create_tables(connection):
             date int,
             exp_date int,
             ingredient text,
+            used int,
             username text not null,
             foreign key (username)
                 references users (username)
