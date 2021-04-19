@@ -8,12 +8,12 @@ Sovelluksella on tällä hetkellä vain yksi käyttäjärooli, normaali käyttä
 
 ### Sovelluksen toiminnallisuuksia
 
-- Käyttäjä voi luoda käyttäjätunnuksen
-- Käyttäjä voi kirjautua järjestelmään tunnuksillaan
-- Käyttäjä näkee kirjauduttuaan seuraavaksi vanhenevat ruoka-ainekset (viiden päivän sisään vanhenevat) aikajärjestyksessä
-- Käyttäjä voi lisätä uuden ruoka-aineksen
-    - Ruoka-aineesta annetaan lisättäessä kaksi tietoa: nimi ja kuiva/tuore aines
-- Käyttäjä voi merkitä ruoka-aineksen syödyksi (ja samalla se katoaa listalta)
+- [] Käyttäjä voi luoda käyttäjätunnuksen
+- [x] Käyttäjä voi kirjautua järjestelmään tunnuksillaan
+- [x] Käyttäjä näkee kirjauduttuaan seuraavaksi vanhenevat ruoka-ainekset (viiden päivän sisään vanhenevat) aikajärjestyksessä
+- [x] Käyttäjä voi lisätä uuden ruoka-aineksen
+    - [x] Ruoka-aineesta annetaan lisättäessä kaksi tietoa: nimi ja päivämäärä, jolloin aines vanhenee
+- [x] Käyttäjä voi merkitä ruoka-aineksen syödyksi (ja samalla se katoaa listalta)
 
 ### Jatkokehitysideoita
 - Listalle lisättyjen ruoka-ainesten tietojen muokkaus (esim. vanhenemispäivän muuttaminen)
