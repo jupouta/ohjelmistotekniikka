@@ -6,6 +6,7 @@ Sovelluksen avulla käyttäjä voi vähentää ruoasta syntyvää hävikkiä. So
 ## Dokumentaatio
 - [Määrittelydokumentti](https://github.com/jupouta/ohjelmistotekniikka/blob/master/dokumentaatio/maarittelydokumentti.md)
 - [Tuntikirjanpito](https://github.com/jupouta/ohjelmistotekniikka/blob/master/dokumentaatio/tuntikirjanpito.md)
+- [Arkkitehtuuri](https://github.com/jupouta/ohjelmistotekniikka/blob/master/dokumentaatio/arkkitehtuuri.md)
 
 ## Ohjeet
 
