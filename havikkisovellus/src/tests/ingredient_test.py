@@ -20,4 +20,4 @@ class TestIngredient(unittest.TestCase):
 
     def test_string(self):
         ingredient = Ingredient('omena', 1618207606, 1618207606)
-        self.assertEqual(ingredient.__str__(), 'omena: added 2021-04-12, expires 2021-04-12')
+        self.assertEqual(ingredient.__str__(), 'omena: added 2021-04-12, expires 2021-04-12, eaten 0')

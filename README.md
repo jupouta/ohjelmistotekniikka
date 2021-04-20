@@ -11,7 +11,7 @@ Sovelluksen avulla käyttäjä voi vähentää ruoasta syntyvää hävikkiä. So
 ## Ohjeet
 
 ### Ohjelman ajaminen
-Ohjelma toimii käynnistämällä virtuaaliympäristön `poetry shell` ja ajamalla sen jälkeen `poetry run invoke start`.
+Ohjelma toimii käynnistämällä virtuaaliympäristön `poetry shell` ja ajamalla sen jälkeen `poetry run invoke start` havikkisovellus-kansiossa.
 
 Ohjelma toimii ilman virtuaaliympäristöä (Python-versio 3.6+) komennolla `python src/index.py`.
 

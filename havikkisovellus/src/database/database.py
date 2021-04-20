@@ -19,7 +19,7 @@ class Database:
         self.__connection.commit()
 
     def get_all_ingredients_by_a_user(self, user):
-        self.__cursor.execute("select ingredient, date, exp_date from food where username=?;",
+        self.__cursor.execute("select ingredient, date, exp_date, used from food where username=?;",
                             (user, ))
         ingredients = self.__cursor.fetchall()
         return ingredients

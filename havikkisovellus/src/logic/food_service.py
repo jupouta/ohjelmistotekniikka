@@ -2,17 +2,20 @@ import time
 import datetime
 
 from entities.ingredient import Ingredient
+from entities.user import User
 
 
 class FoodService:
 
     def __init__(self, database):
         self.database = database
+        self.user = None
 
     def check_username(self, given_username, given_password):
-        user = self.database.get_user(given_username)
-        if user:
-            password = user[1]
+        user_retrieved = self.database.get_user(given_username)
+        if user_retrieved:
+            username, password = user_retrieved[0], user_retrieved[1]
+            self.user = User(username, password)
             if given_password == password:
                 return True
         return False
@@ -41,11 +44,11 @@ class FoodService:
 
         ingredients = []
         for row in data:
-            ingrdnt, date_added, date_expires = row[0], row[1], row[2]
-            ingredient = Ingredient(ingrdnt, date_added, date_expires)
+            ingrdnt, date_added, date_expires, used = row[0], row[1], row[2], row[3]
+            ingredient = Ingredient(ingrdnt, date_added, date_expires, used)
             if expire:
                 # TODO: älä lisää merkittyjä
-                if ingredient.is_close_to_perishing():
+                if ingredient.is_close_to_perishing() and not ingredient.is_used():
                     ingredients.append(ingredient)
             else:
                 ingredients.append(ingredient)

@@ -17,5 +17,8 @@
 | | 1,5 | kirjautumisen perusversio, timestampejä, logiikan hiomista |
 | 16.4. | 2 | lisää toiminnallisuuksia |
 | | 0,5 | testit |
+| 19.4. | 1 | toiminnallisuuksia ja testejä |
+|| 0,5 | luokkakaavio |
+| 20.4. | 0,5 | luokkakaavio ja arkkitehtuuri.md |
 
-Tunnit yhteensä: 20,5h
+Tunnit yhteensä: 22,5h

@@ -35,6 +35,8 @@ class UI:
 
             if given_command == 'list':
                 self.list_added_ingredients()
+            elif given_command == 'i':
+                self.list_added_ingredients(print_expiring=True)
             elif given_command == 'mark':
                 self.mark_ingredient_as_used()
             elif given_command == 'add':
@@ -58,6 +60,8 @@ class UI:
             ingredients = self.food_service.list_added_ingredients(self.__username, expire=True)
         else:
             ingredients = self.food_service.list_added_ingredients(self.__username)
+        if not ingredients:
+            print('No ingredients to list!')
         for ingredient in ingredients:
             print(ingredient)
 
@@ -92,6 +96,7 @@ class UI:
 
     def print_commands(self):
         print('Commands:')
+        print('List perishable ingredients - write \'i\'')
         print('List all the ingredients - write \'list\'')
         print('Mark ingredients as used - write \'mark\'')
         print('Add new ingredient - write \'add\'')
