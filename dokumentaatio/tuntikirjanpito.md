@@ -20,5 +20,6 @@
 | 19.4. | 1 | toiminnallisuuksia ja testejä |
 || 0,5 | luokkakaavio |
 | 20.4. | 0,5 | luokkakaavio ja arkkitehtuuri.md |
+| | 1 | visuaalinen ui |
 
-Tunnit yhteensä: 22,5h
+Tunnit yhteensä: 23,5h

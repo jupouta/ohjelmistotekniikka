@@ -47,7 +47,6 @@ class FoodService:
             ingrdnt, date_added, date_expires, used = row[0], row[1], row[2], row[3]
             ingredient = Ingredient(ingrdnt, date_added, date_expires, used)
             if expire:
-                # TODO: älä lisää merkittyjä
                 if ingredient.is_close_to_perishing() and not ingredient.is_used():
                     ingredients.append(ingredient)
             else:
