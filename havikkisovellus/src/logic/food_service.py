@@ -11,6 +11,7 @@ class FoodService:
         self.database = database
         self.user = None
 
+    # TODO: needs working
     def check_username(self, given_username, given_password):
         user_retrieved = self.database.get_user(given_username)
         if user_retrieved:
