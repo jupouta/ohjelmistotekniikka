@@ -35,8 +35,11 @@ class UI:
 
         self._current_view = None
 
-    def _handle_hello(self):
-        print('Here we are')
+    # TODO
+    def _show_after_marked(self, username, boxes):
+        for box in boxes:
+            print(box.get())
+        self._show_after_login_view(username)
 
     def _show_after_login_view(self, username):
         self._hide_current_view()
@@ -46,7 +49,8 @@ class UI:
         self._current_view = AfterLoginView(
             self._root,
             ingredients,
-            self._handle_hello
+            self._show_after_marked,
+            username
         )
 
         self._current_view.pack()

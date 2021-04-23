@@ -19,3 +19,8 @@ Ohjelman testaamiseen voi käyttää kirjautumisessa käyttäjää `testi` ja t�
 
 ### Testaus
 Yksikkötestit saa ajettua komennolla `poetry run invoke test`.
+
+Testikattavuusraportin saa luotua komennolla `poetry run invoke coverage-report`. Raportin tulokset löytyvät kansiosta htmlcov, ja niitä voi tarkastella tiedostosta index.html.
+
+### Pylint
+Pylint-tarkistuksen voi ajaa komennolla `poetry run invoke lint`.

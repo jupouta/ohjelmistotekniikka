@@ -19,7 +19,7 @@ Tehdyt toiminnallisuudet koskevat komentorivikäyttöliittymää. Visuaalisesta 
 
 - [x] Käyttäjä voi kirjautua järjestelmään tunnuksillaan
 - [ ] Käyttäjä voi luoda käyttäjätunnuksen
-- [ ] Käyttäjä näkee kirjauduttuaan seuraavaksi vanhenevat ruoka-ainekset (viiden päivän sisään vanhenevat) aikajärjestyksessä
+- [x] Käyttäjä näkee kirjauduttuaan seuraavaksi vanhenevat ruoka-ainekset (viiden päivän sisään vanhenevat) aikajärjestyksessä
 - [ ] Käyttäjä voi lisätä uuden ruoka-aineksen
     - [ ] Ruoka-aineesta annetaan lisättäessä kaksi tietoa: nimi ja päivämäärä, jolloin aines vanhenee
 - [ ] Käyttäjä voi merkitä ruoka-aineksen syödyksi (ja samalla se katoaa listalta)

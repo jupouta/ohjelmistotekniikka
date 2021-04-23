@@ -11,7 +11,8 @@ class TestIngredient(unittest.TestCase):
         self.assertEqual(ingredient.convert_date(1618207606), date(2021, 4, 12))
 
     def test_is_close_to_perishing_not_true(self):
-        ingredient = Ingredient('omena', 1618207606, 1619506554)
+        days_10_from_today = int(time.time()) + 60*60*24*10
+        ingredient = Ingredient('omena', 1618207606, days_10_from_today)
         self.assertFalse(ingredient.is_close_to_perishing())
 
     def test_is_close_to_perishing_true(self):

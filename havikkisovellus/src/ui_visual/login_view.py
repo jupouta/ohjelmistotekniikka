@@ -53,14 +53,14 @@ class LoginView:
 
         var_label = ttk.Label(master=self._frame, textvariable=self._label_var)
 
-        label.grid(row=0, column=0)
+        label.grid(row=0, column=0, padx=5, pady=5)
 
-        username_label.grid(row=1, column=0)
-        self._username.grid(row=1, column=1)
-        password_label.grid(row=2, column=0)
-        self._password.grid(row=2, column=1)
+        username_label.grid(row=1, column=0, padx=5, pady=5)
+        self._username.grid(row=1, column=1, sticky=(constants.E, constants.W), padx=5, pady=5)
+        password_label.grid(row=2, column=0, padx=5, pady=5)
+        self._password.grid(row=2, column=1, sticky=(constants.E, constants.W), padx=5, pady=5)
 
-        button.grid(row=3, column=1)
-        var_label.grid(row=4, column=1)
+        button.grid(row=3, column=1, sticky=(constants.E, constants.W), padx=5, pady=5)
+        var_label.grid(row=4, column=1, sticky=(constants.E, constants.W), padx=5, pady=5)
 
         self._frame.grid_columnconfigure(1, weight=1, minsize=250)

@@ -21,6 +21,7 @@
 || 0,5 | luokkakaavio |
 | 20.4. | 0,5 | luokkakaavio ja arkkitehtuuri.md |
 | | 1 | visuaalinen ui |
-| 22.4. | 2 | näkymiä graafiseen käyttölittymään |
+| 22.4. | 2,5 | näkymiä graafiseen käyttölittymään |
+| 23.4. | 1,5 | kirjautumisen jälkeinen ui |
 
-Tunnit yhteensä: 25,5h
+Tunnit yhteensä: 27,5h
