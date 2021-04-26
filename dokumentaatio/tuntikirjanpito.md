@@ -23,5 +23,7 @@
 | | 1 | visuaalinen ui |
 | 22.4. | 2,5 | näkymiä graafiseen käyttölittymään |
 | 23.4. | 1,5 | kirjautumisen jälkeinen ui |
+| 26.4. | 1,5 | pieniä juttuja joka puolella |
+|| 1 | uloskirjautuminen |
 
-Tunnit yhteensä: 27,5h
+Tunnit yhteensä: 30h

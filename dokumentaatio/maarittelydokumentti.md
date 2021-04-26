@@ -14,6 +14,7 @@ Sovelluksella on tällä hetkellä vain yksi käyttäjärooli, normaali käyttä
 - [x] Käyttäjä voi lisätä uuden ruoka-aineksen
     - [x] Ruoka-aineesta annetaan lisättäessä kaksi tietoa: nimi ja päivämäärä, jolloin aines vanhenee
 - [x] Käyttäjä voi merkitä ruoka-aineksen syödyksi (ja samalla se katoaa listalta)
+- [ ] Käyttäjä voi kirjautua ulos
 
 Tehdyt toiminnallisuudet koskevat komentorivikäyttöliittymää. Visuaalisesta käyttöliittymästä tehdyt ominaisuudet:
 
@@ -22,7 +23,8 @@ Tehdyt toiminnallisuudet koskevat komentorivikäyttöliittymää. Visuaalisesta 
 - [x] Käyttäjä näkee kirjauduttuaan seuraavaksi vanhenevat ruoka-ainekset (viiden päivän sisään vanhenevat) aikajärjestyksessä
 - [ ] Käyttäjä voi lisätä uuden ruoka-aineksen
     - [ ] Ruoka-aineesta annetaan lisättäessä kaksi tietoa: nimi ja päivämäärä, jolloin aines vanhenee
-- [ ] Käyttäjä voi merkitä ruoka-aineksen syödyksi (ja samalla se katoaa listalta)
+- [x] Käyttäjä voi merkitä ruoka-aineksen syödyksi (ja samalla se katoaa listalta)
+- [x] Käyttäjä voi kirjautua ulos
 
 
 ### Jatkokehitysideoita

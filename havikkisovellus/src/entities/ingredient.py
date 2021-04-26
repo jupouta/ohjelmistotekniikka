@@ -27,6 +27,9 @@ class Ingredient:
     def mark_as_used(self):
         self.used = True
 
+    def get_content(self):
+        return self.content
+
     def __str__(self):
         if self.used == 1:
             print_string = f'''{self.content}: added {self.date_added}, expires {self.date_preserves}, already eaten'''

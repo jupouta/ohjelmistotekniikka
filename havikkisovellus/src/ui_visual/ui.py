@@ -8,26 +8,22 @@ class UI:
     def __init__(self, root, foodservice):
         self._root = root
         self._current_view = None
-
-        self._username = None
-        self._password = None
-
         self.foodservice = foodservice
 
     def start(self):
         self._show_login_view()
 
     def _show_login_view(self):
+        if self._current_view:
+            self._current_view.destroy()
+
         self._current_view = LoginView(
             self._root,
-            self._handle_login,
+            self._show_after_login_view,
             self.foodservice
         )
 
         self._current_view.pack()
-
-    def _handle_login(self, username):
-        self._show_after_login_view(username)
 
     def _hide_current_view(self):
         if self._current_view:
@@ -35,10 +31,11 @@ class UI:
 
         self._current_view = None
 
-    # TODO
     def _show_after_marked(self, username, boxes):
         for box in boxes:
-            print(box.get())
+            marked, ingr_name = box[0].get(), box[1].get_content()
+            if marked == 1:
+                self.foodservice.mark_ingredient_as_eaten(username, ingr_name)
         self._show_after_login_view(username)
 
     def _show_after_login_view(self, username):
@@ -50,6 +47,7 @@ class UI:
             self._root,
             ingredients,
             self._show_after_marked,
+            self._show_login_view,
             username
         )
 

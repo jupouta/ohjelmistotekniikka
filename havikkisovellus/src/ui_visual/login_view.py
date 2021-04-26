@@ -32,33 +32,39 @@ class LoginView:
         else:
             self._label_var.set("Userword or password not found!")
 
-    def _initialize(self):
+    def _create_entries(self):
         self._frame = ttk.Frame(master=self._root)
-        label = ttk.Label(master=self._frame, text="Login:")
-
         self._username = ttk.Entry(master=self._frame)
-        username_label = ttk.Label(master=self._frame, text="Username")
-
         self._password = ttk.Entry(master=self._frame)
-        password_label = ttk.Label(master=self._frame, text="Password")
+        self._label_var = StringVar()
+        self._label_var.set("")
 
+    def _create_labels(self):
+        label = ttk.Label(master=self._frame, text="Login:")
+        username_label = ttk.Label(master=self._frame, text="Username")
+        password_label = ttk.Label(master=self._frame, text="Password")
+        var_label = ttk.Label(master=self._frame, textvariable=self._label_var)
+        return label, username_label, password_label, var_label
+
+    def _create_button(self):
         button = ttk.Button(
             master=self._frame,
             text="Enter login",
             command=self._show_login_handler
         )
+        return button
 
-        self._label_var = StringVar()
-        self._label_var.set("")
-
-        var_label = ttk.Label(master=self._frame, textvariable=self._label_var)
+    def _initialize(self):
+        self._create_entries()
+        label, username_label, password_label, var_label = self._create_labels()
 
         label.grid(row=0, column=0, padx=5, pady=5)
-
         username_label.grid(row=1, column=0, padx=5, pady=5)
         self._username.grid(row=1, column=1, sticky=(constants.E, constants.W), padx=5, pady=5)
         password_label.grid(row=2, column=0, padx=5, pady=5)
         self._password.grid(row=2, column=1, sticky=(constants.E, constants.W), padx=5, pady=5)
+
+        button = self._create_button()
 
         button.grid(row=3, column=1, sticky=(constants.E, constants.W), padx=5, pady=5)
         var_label.grid(row=4, column=1, sticky=(constants.E, constants.W), padx=5, pady=5)
