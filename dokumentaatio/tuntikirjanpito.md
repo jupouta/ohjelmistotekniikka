@@ -26,6 +26,6 @@
 | 26.4. | 1,5 | pieniä juttuja joka puolella |
 || 1 | uloskirjautuminen |
 | 27.4. | 1 | sekvenssikaavio |
-| | 0,5 | hiomista |
+| | 1 | hiomista + release |
 
-Tunnit yhteensä: 31,5h
+Tunnit yhteensä: 32h
