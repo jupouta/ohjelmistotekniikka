@@ -25,5 +25,7 @@
 | 23.4. | 1,5 | kirjautumisen jälkeinen ui |
 | 26.4. | 1,5 | pieniä juttuja joka puolella |
 || 1 | uloskirjautuminen |
+| 27.4. | 1 | sekvenssikaavio |
+| | 0,5 | hiomista |
 
-Tunnit yhteensä: 30h
+Tunnit yhteensä: 31,5h

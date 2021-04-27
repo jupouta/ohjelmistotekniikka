@@ -36,8 +36,7 @@ class FoodService:
             ingrdnt, date_added, date_expires, used = retrieved[0], retrieved[1], retrieved[2], retrieved[3]
             ingredient = Ingredient(ingrdnt, date_added, date_expires, used)
             return ingredient
-        else:
-            print('No ingredient found!')
+        return None
 
     def list_added_ingredients(self, username, expire=False):
         data = self.database.get_all_ingredients_by_a_user(username)

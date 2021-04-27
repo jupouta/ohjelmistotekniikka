@@ -24,9 +24,6 @@ class Ingredient:
     def is_used(self):
         return self.convert_used(self.used)
 
-    def mark_as_used(self):
-        self.used = True
-
     def get_content(self):
         return self.content
 

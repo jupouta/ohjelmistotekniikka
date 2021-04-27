@@ -1,4 +1,3 @@
-from tkinter import Tk, ttk, constants, StringVar
 
 from ui_visual.login_view import LoginView
 from ui_visual.after_login_view import AfterLoginView

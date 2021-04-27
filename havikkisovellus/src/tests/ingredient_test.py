@@ -19,6 +19,10 @@ class TestIngredient(unittest.TestCase):
         ingredient = Ingredient('omena', 1618207606, int(time.time()))
         self.assertTrue(ingredient.is_close_to_perishing())
 
+    def test_get_content(self):
+        ingredient = Ingredient('omena', 1618207606, 1619097453)
+        self.assertEqual(ingredient.get_content(), 'omena')
+
     def test_string(self):
         ingredient = Ingredient('omena', 1618207606, 1618207606)
         self.assertEqual(ingredient.__str__(), 'omena: added 2021-04-12, expires 2021-04-12, not eaten yet')

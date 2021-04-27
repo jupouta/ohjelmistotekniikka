@@ -17,6 +17,11 @@ class FakeDatabase:
     def get_all_ingredients_by_a_user(self, user):
         return [('porkkana', 1618207606, 1618207606, 0), ('sipuli', 1618207606, 1618207606, 1)]
 
+    def mark_ingredient_as_eaten(self, username, ingredient_name):
+        if ingredient_name == 'tomaatti':
+            return ('tomaatti', 1618207606, 1618207606, 1)
+        return None
+
     def get_user(self, username):
         if username == 'testi':
             return ('testi', 'salis')
@@ -56,3 +61,14 @@ class TestFoodService(unittest.TestCase):
 
         date = self.food_service.check_date_form('')
         self.assertTrue(date > 1600000)
+
+    def test_mark_ingredient_as_eaten(self):
+        ingredient = self.food_service.mark_ingredient_as_eaten('testi', 'tomaatti')
+        self.assertTrue(ingredient)
+        self.assertTrue(ingredient.is_used())
+
+        ingredient = self.food_service.mark_ingredient_as_eaten('testi', 'omena')
+        self.assertFalse(ingredient)
+
+    def test_stop_service(self):
+        self.food_service.stop_service()

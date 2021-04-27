@@ -42,13 +42,13 @@ class AfterLoginView:
 
     def _create_mark_button(self):
         if self._ingredients:
-
             button = ttk.Button(
                 master=self._frame,
                 text="Mark as eaten",
                 command=lambda:self._handle_mark(self._username, self._boxes)
             )
             return button
+        return None
 
     def _create_logout_button(self):
         button = ttk.Button(

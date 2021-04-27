@@ -43,6 +43,9 @@ class UI:
                 self.add_new_ingredient()
             elif given_command == 'print':
                 self.print_commands()
+            elif given_command == 'logout':
+                self.logout()
+                break
             elif given_command == 'stop':
                 self.stop_service()
                 break
@@ -73,6 +76,8 @@ class UI:
         ingredient = self.food_service.mark_ingredient_as_eaten(self.__username, given_name)
         if ingredient:
             print(f'{given_name} marked as eaten!')
+        else:
+            print(print('No ingredient found!'))
 
     def add_new_ingredient(self):
         name = input('Ingredient name: ')
@@ -94,12 +99,18 @@ class UI:
                 print('Oops! Remember to give the date in the correct form dd/mm/yyyy.')
         return timestamp
 
+    def logout(self):
+        self.__username = ''
+        print('You have been logged out\n')
+        self.start_login()
+
     def print_commands(self):
         print('Commands:')
         print('List perishable ingredients - write \'i\'')
         print('List all the ingredients - write \'list\'')
         print('Mark ingredients as used - write \'mark\'')
         print('Add new ingredient - write \'add\'')
+        print('Logout from app - write \'logout\'')
         print('Stop the program - write \'stop\'')
         print('Show the commands - write \'print\'')
 
