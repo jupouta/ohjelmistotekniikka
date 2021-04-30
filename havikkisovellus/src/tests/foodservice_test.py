@@ -11,8 +11,8 @@ class FakeDatabase:
     def get_all(self):
         return self.db
 
-    def insert_a_new_ingredient(self, date, ingredient, perishable, username='testi'):
-        self.db.append((date, ingredient, perishable, username))
+    def insert_a_new_ingredient(self, date, ingredient, expire_date, username='testi'):
+        self.db.append((date, ingredient, expire_date, username))
 
     def get_all_ingredients_by_a_user(self, user):
         return [('porkkana', 1618207606, 1618207606, 0), ('sipuli', 1618207606, 1618207606, 1)]
@@ -36,7 +36,7 @@ class TestFoodService(unittest.TestCase):
         self.food_service = FoodService(FakeDatabase())
 
     def test_add_ingredient(self):
-        self.food_service.add_ingredient('omena', 1618207606, 1617176770)
+        self.food_service.add_ingredient(1618207606, 'omena', 1617176770)
         self.assertEqual(len(self.food_service.database.get_all()), 1)
 
     def test_list_added_ingredients(self):
@@ -56,10 +56,10 @@ class TestFoodService(unittest.TestCase):
         self.assertFalse(self.food_service.check_username('ei', 'salis'))
 
     def test_check_date_form(self):
-        date = self.food_service.check_date_form('22/04/2021')
+        date = self.food_service.convert_expire_date('22/04/2021')
         self.assertTrue(date > 1600000)
 
-        date = self.food_service.check_date_form('')
+        date = self.food_service.convert_expire_date('')
         self.assertTrue(date > 1600000)
 
     def test_mark_ingredient_as_eaten(self):

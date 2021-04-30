@@ -93,7 +93,7 @@ class UI:
         while True:
             given_date = input('Expiration date: ')
             try:
-                timestamp = self.food_service.check_date_form(given_date)
+                timestamp = self.food_service.convert_expire_date(given_date)
                 break
             except ValueError:
                 print('Oops! Remember to give the date in the correct form dd/mm/yyyy.')

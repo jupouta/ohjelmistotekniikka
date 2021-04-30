@@ -27,5 +27,7 @@
 || 1 | uloskirjautuminen |
 | 27.4. | 1 | sekvenssikaavio |
 | | 1 | hiomista + release |
+| 30.4. | 1,5 | docstring-dokumentaatiota ja bugien tarkastamista |
+| | 0,5 | käyttäjiä |
 
-Tunnit yhteensä: 32h
+Tunnit yhteensä: 34h
