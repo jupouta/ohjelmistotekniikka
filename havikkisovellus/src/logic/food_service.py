@@ -53,6 +53,7 @@ class FoodService:
         if user:
             print('Username already taken!')
             return None
+        self.database.add_user(username, password)
 
     def log_out(self):
         self.user = None

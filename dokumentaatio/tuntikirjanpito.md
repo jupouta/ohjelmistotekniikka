@@ -31,6 +31,7 @@
 | | 0,5 | käyttäjiä |
 | 3.5. | 1,5 | erillinen luokka listaukselle |
 | | 0,5 | uuden ainesosan lisäys |
-| | 0,5 | muokkausta |
+| | 1 | muokkausta |
+| | 1 | arkkitehtuurikuvaus ja käyttöohje |
 
-Tunnit yhteensä: 36,5h
+Tunnit yhteensä: 37,5h

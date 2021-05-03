@@ -8,9 +8,9 @@ class AfterLoginView:
         self._root = root
         self._handle_after_logout = handle_after_logout
         self._handle_add_new = handle_add_new
+
         self.foodservice = foodservice
         self._username = self.foodservice.get_user().get_username()
-
         self._ingredients = self.foodservice.list_added_ingredients(self._username, expire=True)
 
         self._ingredient = None
@@ -53,9 +53,8 @@ class AfterLoginView:
         self.foodservice.log_out()
         self._handle_after_logout()
 
-
     def _create_header(self):
-        label = Message(master=self._frame, text="You are logged in!")
+        label = Message(master=self._frame, text=f"You are logged in, {self._username}!")
         label.grid(row=0, column=1, padx=5, pady=5)
 
         logout_button = self._create_logout_button()
@@ -82,7 +81,6 @@ class AfterLoginView:
 
         add_button = self._create_add_ingredient_button()
         add_button.grid(column=1, sticky=(constants.E, constants.W), padx=5, pady=5)
-
 
     def _create_add_ingredient_button(self):
         button = ttk.Button(

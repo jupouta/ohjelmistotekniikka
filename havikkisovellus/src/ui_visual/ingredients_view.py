@@ -30,9 +30,7 @@ class IngredientsView:
             return button
         return None
 
-    def _initialize(self):
-        self._frame = ttk.Frame(master=self._root)
-
+    def _create_list_header(self):
         self._label_var = StringVar()
 
         if self._ingredients:
@@ -46,6 +44,11 @@ class IngredientsView:
             text_label = ttk.Label(master=self._frame,
                                 textvariable=self._label_var)
         text_label.grid(row=0, column=1, sticky=(constants.E, constants.W), padx=5, pady=5)
+
+    def _initialize(self):
+        self._frame = ttk.Frame(master=self._root)
+
+        self._create_list_header()
 
         i = 1
         for ingredient in self._ingredients:
