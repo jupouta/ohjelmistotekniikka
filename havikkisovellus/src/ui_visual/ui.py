@@ -1,3 +1,4 @@
+import time
 
 from ui_visual.login_view import LoginView
 from ui_visual.after_login_view import AfterLoginView
@@ -30,24 +31,21 @@ class UI:
 
         self._current_view = None
 
-    def _show_after_marked(self, username, boxes):
-        for box in boxes:
-            marked, ingr_name = box[0].get(), box[1].get_content()
-            if marked == 1:
-                self.foodservice.mark_ingredient_as_eaten(username, ingr_name)
-        self._show_after_login_view(username)
-
-    def _show_after_login_view(self, username):
+    def _show_after_login_view(self):
         self._hide_current_view()
-
-        ingredients = self.foodservice.list_added_ingredients(username, expire=True)
 
         self._current_view = AfterLoginView(
             self._root,
-            ingredients,
-            self._show_after_marked,
             self._show_login_view,
-            username
+            self._show_after_new_added,
+            self.foodservice
         )
 
         self._current_view.pack()
+
+    def _show_after_new_added(self, ingredient, date, username):
+        converted_date = self.foodservice.convert_expire_date(date)
+        today = int(time.time())
+        self.foodservice.add_ingredient(today, ingredient, converted_date, username)
+
+        self._show_after_login_view()

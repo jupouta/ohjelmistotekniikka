@@ -28,7 +28,7 @@ class LoginView:
         accepted = self.foodservice.check_username(username, password)
         if accepted:
             self._label_var.set("Login accepted!")
-            self._handle_login(username)
+            self._handle_login()
         else:
             self._label_var.set("Userword or password not found!")
 

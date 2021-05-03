@@ -83,7 +83,7 @@ class UI:
         name = input('Ingredient name: ')
         date_expires = self.add_ingredient_perishable_info()
         date = int(time.time())
-        self.food_service.add_ingredient(date, date_expires, name)
+        self.food_service.add_ingredient(date, name, date_expires)
 
     def add_ingredient_perishable_info(self):
         print('Add expiration date: ')

@@ -29,5 +29,8 @@
 | | 1 | hiomista + release |
 | 30.4. | 1,5 | docstring-dokumentaatiota ja bugien tarkastamista |
 | | 0,5 | käyttäjiä |
+| 3.5. | 1,5 | erillinen luokka listaukselle |
+| | 0,5 | uuden ainesosan lisäys |
+| | 0,5 | muokkausta |
 
-Tunnit yhteensä: 34h
+Tunnit yhteensä: 36,5h

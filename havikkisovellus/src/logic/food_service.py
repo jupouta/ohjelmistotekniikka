@@ -44,6 +44,9 @@ class FoodService:
                 return True
         return False
 
+    def get_user(self):
+        return self.user
+
     #TODO
     def add_user(self, username, password):
         user = self.database.get_user(username)
@@ -51,6 +54,8 @@ class FoodService:
             print('Username already taken!')
             return None
 
+    def log_out(self):
+        self.user = None
 
     def convert_expire_date(self, date):
         """Convert the given expire date to timestamp format (integer).
@@ -77,8 +82,8 @@ class FoodService:
                 The date when the ingredient has been added in timestamp format (integer).
             ingredient: The name of the ingredient.
             expire_date: The date when the ingredient will expire.
-            username: The user's username.
-            """
+            username: The user's username. If not given, 'testi' will be used.
+        """
         self.database.insert_a_new_ingredient(date, ingredient, expire_date, username)
 
     def mark_ingredient_as_eaten(self, username, ingredient_name):
