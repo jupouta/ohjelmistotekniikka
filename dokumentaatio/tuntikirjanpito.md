@@ -36,6 +36,7 @@
 | 4.5. | 1| käyttäjän lisääminen |
 | | 1 | koodin muokkausta |
 | | 1 | dokumentaatiota |
+| | 0,5 | release ja fiksejä |
 
 
-Tunnit yhteensä: 40,5h
+Tunnit yhteensä: 41,5h

@@ -22,7 +22,7 @@ Ohjelma toimii ilman poetrya (Python-versio 3.6+) komennolla `python src/index.p
 
 Ohjelman testaamiseen voi käyttää kirjautumisessa käyttäjää `testi` ja tälle salasanaa `salis`.
 
-HUOM! Kun ohjelma käynnistetään, tietokantaan lisätään kaksi ruoka-ainesta käyttäjälle `testi`, jotta ohjelmaa voi testata. Ruoka-ainekset poistetaan luonnollisesti lopullisesta versiosta.
+HUOM! Yksikkötestit ajettaessa kaikki aiemmat tiedot poistetaan.
 
 ### Testaus
 Yksikkötestit saa ajettua komennolla `poetry run invoke test`.

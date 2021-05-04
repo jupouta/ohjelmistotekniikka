@@ -16,7 +16,7 @@ def create_tables(connection):
     cursor = connection.cursor()
 
     cursor.execute('''
-        create table food (
+        create table if not exists food (
             id integer primary key autoincrement,
             date int,
             exp_date int,
@@ -29,7 +29,7 @@ def create_tables(connection):
     ''')
 
     cursor.execute('''
-        create table users (
+        create table if not exists users (
             id integer primary key autoincrement,
             username text not null unique,
             password text not null
@@ -41,7 +41,7 @@ def create_tables(connection):
 def initialize_database():
     connection = get_database_connection()
 
-    drop_tables(connection)
+    #drop_tables(connection)
     create_tables(connection)
 
     #connection.close()

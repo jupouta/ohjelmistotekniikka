@@ -12,17 +12,14 @@ class Database:
         Automatically adds one test user and two test ingredients."""
         self.__connection = get_database_connection()
         self.__cursor = self.__connection.cursor()
-        self.__cursor.execute('''
-            insert into users (username, password) values ('testi', 'salis');
-        ''')
 
-        self.__cursor.execute('''
-            insert into food (date, exp_date, ingredient, username) values (1617176770, 1617176770, 'tomaatti', 'testi');
-        ''')
-        self.__cursor.execute('''
-            insert into food (date, exp_date, ingredient, username) values (1618207606, 1619506554, 'omena', 'testi');
-        ''')
+        self._initialize()
 
+    def _initialize(self):
+        if not self.get_user('testi'):
+            self.__cursor.execute('''
+               insert into users (username, password) values ('testi', 'salis');
+            ''')
         self.__connection.commit()
 
     def get_all_ingredients_by_a_user(self, user):
@@ -56,6 +53,7 @@ class Database:
             set used=1
             where username=? and ingredient=?;''', (username, ingredient_name))
         ingredient = self.find_ingredient(username, ingredient_name)
+        self.__connection.commit()
         return ingredient
 
     def insert_a_new_ingredient(self, date, ingredient, expire_date, username):

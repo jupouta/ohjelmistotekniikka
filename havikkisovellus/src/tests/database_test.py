@@ -21,6 +21,9 @@ class TestDatabase(unittest.TestCase):
         user = self.database.get_user('testi123')
         self.assertTrue(user)
 
+        user = self.database.get_user('esimerkki')
+        self.assertFalse(user)
+
     def test_find_ingredient(self):
         self.database.insert_a_new_ingredient(1619778769, 'tomaatti', 1619778769, 'testi')
         self.database.insert_a_new_ingredient(1619778769, 'tomaatti', 1619778769, 'testi123')
