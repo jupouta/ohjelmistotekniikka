@@ -60,7 +60,7 @@ class AfterLoginView:
         logout_button = self._create_logout_button()
         logout_button.grid(row=0, column=2, padx=5, pady=5)
 
-    def _create_add_entries(self):
+    def _create_add_ingredients_entries(self):
         i = 3
         add_label = ttk.Label(master=self._frame, text="Ingredient:")
         add_label.grid(row=i, column=0, padx=5, pady=5)
@@ -73,11 +73,11 @@ class AfterLoginView:
         self._date.grid(row=i+1, column=1, sticky=(constants.E, constants.W), padx=5, pady=5)
 
     def _create_footer(self):
-        add_label_text = ttk.Label(master=self._frame, text="Add a new ingredient below")
+        add_label_text = ttk.Label(master=self._frame, text="Add a new ingredient below:")
         add_label_text.grid(row=2, column=1, columnspan=2,
                             sticky=(constants.E, constants.W), padx=5, pady=5)
 
-        self._create_add_entries()
+        self._create_add_ingredients_entries()
 
         add_button = self._create_add_ingredient_button()
         add_button.grid(column=1, sticky=(constants.E, constants.W), padx=5, pady=5)
@@ -87,7 +87,9 @@ class AfterLoginView:
             master=self._frame,
             text="Add new ingredient",
             command=lambda:self._handle_add_new(
-                self._ingredient.get(), self._date.get(), self._username)
+                self._ingredient.get(),
+                self._date.get(),
+                self._username)
         )
         return button
 

@@ -1,6 +1,7 @@
 import time
 
 from ui_visual.login_view import LoginView
+from ui_visual.create_user_view import CreateUserView
 from ui_visual.after_login_view import AfterLoginView
 
 class UI:
@@ -20,6 +21,7 @@ class UI:
         self._current_view = LoginView(
             self._root,
             self._show_after_login_view,
+            self._show_create_user_view,
             self.foodservice
         )
 
@@ -30,6 +32,18 @@ class UI:
             self._current_view.destroy()
 
         self._current_view = None
+
+    def _show_create_user_view(self):
+        if self._current_view:
+            self._current_view.destroy()
+
+        self._current_view = CreateUserView(
+            self._root,
+            self._show_login_view,
+            self.foodservice
+        )
+
+        self._current_view.pack()
 
     def _show_after_login_view(self):
         self._hide_current_view()

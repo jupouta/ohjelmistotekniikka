@@ -33,5 +33,6 @@
 | | 0,5 | uuden ainesosan lisäys |
 | | 1 | muokkausta |
 | | 1 | arkkitehtuurikuvaus ja käyttöohje |
+| 4.5. | 1,5 | käyttäjän lisääminen ja koodin muokkausta |
 
-Tunnit yhteensä: 37,5h
+Tunnit yhteensä: 38,5h
