@@ -27,6 +27,11 @@ class FakeDatabase:
             return ('testi', 'salis')
         return None
 
+    def add_user(self, username, password):
+        if username == 'testi':
+            return False
+        return True
+
     def stop_service(self):
         pass
 
@@ -46,14 +51,18 @@ class TestFoodService(unittest.TestCase):
         ingredients = self.food_service.list_added_ingredients('testi', expire=True)
         self.assertEqual(len(ingredients), 1)
 
-    def test_check_user_works(self):
+    def test_check_user(self):
         self.assertTrue(self.food_service.check_username('testi', 'salis'))
-
-    def test_check_user_password(self):
         self.assertFalse(self.food_service.check_username('testi', 'salasana'))
-
-    def test_check_user_does_not_work(self):
         self.assertFalse(self.food_service.check_username('ei', 'salis'))
+
+    def test_add_user(self):
+        self.assertFalse(self.food_service.add_user('testi', 'salis'))
+        self.assertTrue(self.food_service.add_user('testi1', 'salis'))
+
+    def test_log_out(self):
+        self.food_service.log_out()
+        self.assertIsNone(self.food_service.user)
 
     def test_check_date_form(self):
         date = self.food_service.convert_expire_date('22/04/2021')

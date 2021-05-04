@@ -19,7 +19,7 @@ Sovelluksella on tällä hetkellä vain yksi käyttäjärooli, normaali käyttä
 Tehdyt toiminnallisuudet koskevat komentorivikäyttöliittymää. Visuaalisesta käyttöliittymästä tehdyt ominaisuudet:
 
 - [x] Käyttäjä voi kirjautua järjestelmään tunnuksillaan
-- [ ] Käyttäjä voi luoda käyttäjätunnuksen
+- [x] Käyttäjä voi luoda käyttäjätunnuksen
 - [x] Käyttäjä näkee kirjauduttuaan seuraavaksi vanhenevat ruoka-ainekset (viiden päivän sisään vanhenevat) aikajärjestyksessä
 - [x] Käyttäjä voi lisätä uuden ruoka-aineksen
     - [x] Ruoka-aineesta annetaan lisättäessä kaksi tietoa: nimi ja päivämäärä, jolloin aines vanhenee

@@ -45,10 +45,20 @@ class FoodService:
         return False
 
     def get_user(self):
+        """Return the user loggied in in this session.
+        Returns:
+            The user in this session."""
         return self.user
 
-    #TODO
     def add_user(self, username, password):
+        """Add user to the database if the username doesn't exist already.
+        Args:
+            username: The username given by user.
+            password: The password given by user.
+
+        Returns:
+            Boolean value indicating if the new username is accepted.
+            If it already exists, False is returned."""
         user = self.database.get_user(username)
         if user:
             return False
