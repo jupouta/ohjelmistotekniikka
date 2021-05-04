@@ -97,6 +97,7 @@ class FoodService:
         """
         self.database.insert_a_new_ingredient(date, ingredient, expire_date, username)
 
+    # TODO: self.user
     def mark_ingredient_as_eaten(self, username, ingredient_name):
         """Mark an ingredient as used.
         Return the marked ingredient for further use.

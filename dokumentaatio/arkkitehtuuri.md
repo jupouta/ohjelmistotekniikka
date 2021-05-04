@@ -4,7 +4,7 @@
 Sovellus koostuu käyttöliittymästä (pakkaus _ui_), tietokannasta (pakkaus _database_), jonne tiedot tallennetaan, ja näiden välillä tiedon välityksestä huolehtivasta sovelluslogiikan tasosta (pakkaus _logic_). Pakkaus _entities_ käsittää luokat, joita käytetään tiedon hallinnassa sovelluslogiikan tasolla.
 
 ## Käyttöliittymä
-Käyttöliittymässä on kaksi näkymää: kirjautumisnäkymä ja kirjautumisen jälkeinen näkymä. Näkymistä vastaa luokka _UI_. Näkymistä voi olla kerrallaan vain yksi. Kirjautumisen jälkeinen näkymä koostuu kahdesta luokasta, _AfterLoginView_ ja _IngredientsView_, joista jälkimmäinen vastaa ainesosien listauksesta.
+Käyttöliittymässä on kolme näkymää: kirjautumisnäkymä, kirjautumisen jälkeinen näkymä ja käyttäjän luomiseen tarkoitettu näkymä. Näkymistä vastaa luokka _UI_. Näkymistä voi olla kerrallaan vain yksi. Kirjautumisen jälkeinen näkymä koostuu kahdesta luokasta, _AfterLoginView_ ja _IngredientsView_, joista jälkimmäinen vastaa ainesosien listauksesta.
 
 ## Sovelluslogiikka
 Toiminnallisuudesta vastaa pakkauksen _logic_ luokka _FoodService_. _FoodService_ tarjoaa käyttöliittymälle tarvittavat toiminnallisuudet, joita tarvitaan tietojen tallentamiseen ja noutamiseen tietokannasta, esim. käyttäjän lisäämien ainesosien listaus ```list_added_ingredients(username, expire=False)```. _FoodService_ käyttää myös luokkia ```Ingredient``` ja ```User``` tiedon mallintamisessa.
@@ -33,6 +33,11 @@ Prosessi lähtee liikkeelle, kun käyttäjä painaa painiketta _Enter login_. K�
 ### Ainesosan lisääminen
 
 ### Ainesosan päivittäminen
+Käyttäjä merkitsee ainesosan käytetyksi. Esimerkissä on käytetty käyttäjää 'testi' ja ainesosaa 'tomaatti'.
+
+![Sekvenssikaavio päivittämisestä](https://github.com/jupouta/ohjelmistotekniikka/blob/master/dokumentaatio/kuvat/sekvenssikaavio_ainesosan_merkitseminen.png)
+
+Käyttäjä valitsee ensin merkittävät ainesosat ja painaa sitten _Mark as eaten_. Käyttöliittymä kutsuu ```FoodService```n metodia mark_ingredient_as_eaten, jolle annetaan parametreiksi käyttäjätunnus ja kyseisen ainesosan nimi. Tällöin kutsutaan ```Database```n samannimistä metodia, joka merkitsee käyttäjätunnuksen ainesosan käytetyksi, ja lopuksi palauttaa muokatun ainesosan. ```FoodService``` taas palauttaa ainesosan Ingredient-luokan oliona. Lopuksi käyttöiittymä renderöidään uudelleen metodin _show_ingredient_list kautta.
 
 ### Käyttäjän luominen
 

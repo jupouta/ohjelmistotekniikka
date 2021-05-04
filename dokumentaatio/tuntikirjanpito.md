@@ -33,7 +33,7 @@
 | | 0,5 | uuden ainesosan lisäys |
 | | 1 | muokkausta |
 | | 1 | arkkitehtuurikuvaus ja käyttöohje |
-| 4.5. | 1| käyttäjän lisääminen ja |
+| 4.5. | 1| käyttäjän lisääminen |
 | | 1 | koodin muokkausta |
 | | 1 | dokumentaatiota |
 
