@@ -7,11 +7,13 @@ authors = ["Julia <juliapoutanen@gmail.com>"]
 [tool.poetry.dependencies]
 python = "^3.7"
 invoke = "^1.5.0"
+python-dotenv = "^0.17.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.2"
 coverage = "^5.5"
 pylint = "^2.7.4"
+pytest-dotenv = "^0.5.2"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

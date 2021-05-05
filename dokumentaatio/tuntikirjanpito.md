@@ -37,6 +37,9 @@
 | | 1 | koodin muokkausta |
 | | 1 | dokumentaatiota |
 | | 0,5 | release ja fiksejä |
+| 5.5. | 1 | koodin laatu |
+| | 1,5 | merkitseminen ja testit |
+| | 0,5 | testikanta |
 
 
-Tunnit yhteensä: 41,5h
+Tunnit yhteensä: 44,5h

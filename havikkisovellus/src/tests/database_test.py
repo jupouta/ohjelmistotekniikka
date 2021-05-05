@@ -24,30 +24,28 @@ class TestDatabase(unittest.TestCase):
         user = self.database.get_user('esimerkki')
         self.assertFalse(user)
 
-    def test_find_ingredient(self):
-        self.database.insert_a_new_ingredient(1619778769, 'tomaatti', 1619778769, 'testi')
-        self.database.insert_a_new_ingredient(1619778769, 'tomaatti', 1619778769, 'testi123')
-
-        ingredient = self.database.find_ingredient('testi', 'tomaatti')
-        self.assertTrue(ingredient)
-
-        ingredient = self.database.find_ingredient('testi123', 'tomaatti')
-        self.assertTrue(ingredient)
-
-        ingredient = self.database.find_ingredient('testi', 'sipuli')
-        self.assertFalse(ingredient)
-
     def test_find_all_users_ingredients(self):
         self.database.insert_a_new_ingredient(1619778769, 'tomaatti', 1619778769, 'testi')
         self.database.insert_a_new_ingredient(1619778769, 'omena', 1619778769, 'testi')
+        self.database.insert_a_new_ingredient(1619778769, 'omena', 1619778769, 'testi123')
 
         ingredients = self.database.get_all_ingredients_by_a_user('testi')
         self.assertEqual(len(ingredients), 2)
 
+        ingredients = self.database.get_all_ingredients_by_a_user('testi123')
+        self.assertEqual(len(ingredients), 1)
+
     def test_mark_ingredient_as_eaten(self):
         self.database.insert_a_new_ingredient(1619778769, 'tomaatti', 1619778769, 'testi')
-        ingredient = self.database.mark_ingredient_as_eaten('testi', 'tomaatti')
-        self.assertTrue(ingredient)
+        self.database.mark_ingredient_as_eaten('testi', 1)
 
-        ingredient = self.database.mark_ingredient_as_eaten('testi', 'sipuli')
-        self.assertFalse(ingredient)
+        ingredients = self.database.get_all_ingredients_by_a_user('testi')
+        ingredient = ingredients[0]
+
+        self.assertEqual(ingredient[4], 1)
+
+        #ingredient = self.database.mark_ingredient_as_eaten('testi', 'sipuli')
+        #self.assertFalse(ingredient)
+
+    def tearDown(self):
+        self.database.delete_all()

@@ -98,22 +98,14 @@ class FoodService:
         self.database.insert_a_new_ingredient(date, ingredient, expire_date, username)
 
     # TODO: self.user
-    def mark_ingredient_as_eaten(self, username, ingredient_name):
+    def mark_ingredient_as_eaten(self, username, ingredient_id):
         """Mark an ingredient as used.
         Return the marked ingredient for further use.
 
         Args:
             username: The user's username.
-            ingredient_name: The name of the ingredient to be marked.
-
-        Returns:
-            The marked ingredient. If no ingredient was found, return None."""
-        found = self.database.mark_ingredient_as_eaten(username, ingredient_name)
-        if found:
-            ingrdnt, date_added, date_expires, used = found[0], found[1], found[2], found[3]
-            ingredient = Ingredient(ingrdnt, date_added, date_expires, used)
-            return ingredient
-        return None
+            ingredient_id: The id of the ingredient to be marked."""
+        self.database.mark_ingredient_as_eaten(username, ingredient_id)
 
     def list_added_ingredients(self, username, expire=False):
         """List user's ingredients found in the database.
@@ -135,8 +127,8 @@ class FoodService:
 
         ingredients = []
         for row in data:
-            ingrdnt, date_added, date_expires, used = row[0], row[1], row[2], row[3]
-            ingredient = Ingredient(ingrdnt, date_added, date_expires, used)
+            ingr_id, ingr, date_added, date_expires, used = row[0], row[1], row[2], row[3], row[4]
+            ingredient = Ingredient(ingr_id, ingr, date_added, date_expires, used)
             if expire:
                 if ingredient.is_close_to_perishing() and not ingredient.is_used():
                     ingredients.append(ingredient)

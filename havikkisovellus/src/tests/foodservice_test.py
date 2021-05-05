@@ -15,12 +15,11 @@ class FakeDatabase:
         self.db.append((date, ingredient, expire_date, username))
 
     def get_all_ingredients_by_a_user(self, user):
-        return [('porkkana', 1618207606, 1618207606, 0), ('sipuli', 1618207606, 1618207606, 1)]
+        return [(1, 'porkkana', 1618207606, 1618207606, 0), (2, 'sipuli', 1618207606, 1618207606, 1)]
 
-    def mark_ingredient_as_eaten(self, username, ingredient_name):
-        if ingredient_name == 'tomaatti':
-            return ('tomaatti', 1618207606, 1618207606, 1)
-        return None
+    def mark_ingredient_as_eaten(self, username, ingredient_id):
+        if ingredient_id == 1:
+            return (1, 'tomaatti', 1618207606, 1618207606, 0)
 
     def get_user(self, username):
         if username == 'testi':
@@ -38,7 +37,8 @@ class FakeDatabase:
 class TestFoodService(unittest.TestCase):
 
     def setUp(self):
-        self.food_service = FoodService(FakeDatabase())
+        self.database = FakeDatabase()
+        self.food_service = FoodService(self.database)
 
     def test_add_ingredient(self):
         self.food_service.add_ingredient(1618207606, 'omena', 1617176770)
@@ -72,12 +72,17 @@ class TestFoodService(unittest.TestCase):
         self.assertTrue(date > 1600000)
 
     def test_mark_ingredient_as_eaten(self):
-        ingredient = self.food_service.mark_ingredient_as_eaten('testi', 'tomaatti')
-        self.assertTrue(ingredient)
-        self.assertTrue(ingredient.is_used())
+        self.food_service.mark_ingredient_as_eaten('testi', 1)
 
-        ingredient = self.food_service.mark_ingredient_as_eaten('testi', 'omena')
-        self.assertFalse(ingredient)
+        ingredients = self.food_service.list_added_ingredients('testi')
+        self.assertEqual(ingredients[0].is_used(), 1)
+        self.assertEqual(ingredients[0].is_used(), 1)
+
+    #     self.assertTrue(ingredient)
+    #     self.assertTrue(ingredient.is_used())
+
+    #     ingredient = self.food_service.mark_ingredient_as_eaten('testi', 'omena')
+    #     self.assertFalse(ingredient)
 
     def test_stop_service(self):
         self.food_service.stop_service()

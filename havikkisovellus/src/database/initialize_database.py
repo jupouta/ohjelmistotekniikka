@@ -1,4 +1,5 @@
 from database.database_connect import get_database_connection
+from config import ENVIRONMENT
 
 def drop_tables(connection):
     cursor = connection.cursor()
@@ -40,8 +41,8 @@ def create_tables(connection):
 
 def initialize_database():
     connection = get_database_connection()
-
-    #drop_tables(connection)
+    if ENVIRONMENT == 'test':
+        drop_tables(connection)
     create_tables(connection)
 
     #connection.close()

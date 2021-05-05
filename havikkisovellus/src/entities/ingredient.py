@@ -11,10 +11,12 @@ class Ingredient:
         used: If the ingredient is used already.
     """
 
-    def __init__(self, content, date_added, date_expires, used=0):
+    def __init__(self, ingr_id, content, date_added, date_expires, used=0):
         """The constructor for the class.
 
         Args:
+            ingr_id:
+                Ingredient's id in the database.
             content:
                 Ingredient's name.
             date_added:
@@ -25,6 +27,7 @@ class Ingredient:
                 Optional; If the ingredient is used already.
                 If not given, not used (0) is assumed.
         """
+        self.ingr_id = ingr_id
         self.content = content
         self.date_added = self.convert_date(date_added)
         self.date_expires = self.convert_date(date_expires)
