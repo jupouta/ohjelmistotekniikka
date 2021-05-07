@@ -40,12 +40,10 @@ class TestDatabase(unittest.TestCase):
         self.database.mark_ingredient_as_eaten('testi', 1)
 
         ingredients = self.database.get_all_ingredients_by_a_user('testi')
+        self.assertEqual(len(ingredients), 1)
         ingredient = ingredients[0]
 
         self.assertEqual(ingredient[4], 1)
-
-        #ingredient = self.database.mark_ingredient_as_eaten('testi', 'sipuli')
-        #self.assertFalse(ingredient)
 
     def tearDown(self):
         self.database.delete_all()

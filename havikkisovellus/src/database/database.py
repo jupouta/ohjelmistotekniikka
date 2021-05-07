@@ -24,7 +24,7 @@ class Database:
 
     def get_all_ingredients_by_a_user(self, user):
         self._cursor.execute(
-            "select id, ingredient, date, exp_date, used from food where username=?;",
+            "select id, date, ingredient, exp_date, used from food where username=?;",
                             (user, ))
         ingredients = self._cursor.fetchall()
         return ingredients
@@ -41,12 +41,12 @@ class Database:
             (username, password))
         self._connection.commit()
 
-    # def find_ingredient(self, username, ingredient_id):
-    #     self._cursor.execute(
-    #         '''select ingredient, date, exp_date, used from food
-    #         where username=? and id=?;''', (username, ingredient_id))
-    #     ingredient = self._cursor.fetchone()
-    #     return ingredient
+    def find_ingredient(self, username, ingredient_id):
+        self._cursor.execute(
+            '''select id, date, ingredient, exp_date, used, username from food
+            where username=? and id=?;''', (username, ingredient_id))
+        ingredient = self._cursor.fetchone()
+        return ingredient
 
     def mark_ingredient_as_eaten(self, username, ingredient_id):
         self._cursor.execute(

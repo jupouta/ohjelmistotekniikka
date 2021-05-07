@@ -21,13 +21,13 @@ class Ingredient:
                 Ingredient's name.
             date_added:
                 The date the ingredient was added to the database.
-            date_preserves:
+            date_expires:
                 The date the ingredient will expire.
             used:
                 Optional; If the ingredient is used already.
                 If not given, not used (0) is assumed.
         """
-        self.ingr_id = ingr_id
+        self._ingr_id = ingr_id
         self.content = content
         self.date_added = self.convert_date(date_added)
         self.date_expires = self.convert_date(date_expires)
@@ -82,6 +82,12 @@ class Ingredient:
 
         Returns: The attribute 'content' for further use."""
         return self.content
+
+    def get_id(self):
+        """Return ingredient id in the database.
+
+        Returns: The attribute 'ingr_id' for further use."""
+        return self._ingr_id
 
     def __str__(self):
         """Forms a string format of the ingredient.

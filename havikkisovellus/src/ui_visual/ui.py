@@ -1,3 +1,5 @@
+"""Class and methods for the UI base."""
+
 import time
 
 from ui_visual.login_view import LoginView
@@ -5,11 +7,21 @@ from ui_visual.create_user_view import CreateUserView
 from ui_visual.after_login_view import AfterLoginView
 
 class UI:
+    """Class for the UI and its base.
 
-    def __init__(self, root, foodservice):
+    Attributes:
+        root:
+            The root component of the window.
+        current_view:
+            The current frame in the window.
+        food_service:
+            The service class for handling all the logic between the UI and the database.
+    """
+
+    def __init__(self, root, food_service):
         self._root = root
         self._current_view = None
-        self.foodservice = foodservice
+        self.food_service = food_service
 
     def start(self):
         self._show_login_view()
@@ -22,7 +34,7 @@ class UI:
             self._root,
             self._show_after_login_view,
             self._show_create_user_view,
-            self.foodservice
+            self.food_service
         )
 
         self._current_view.pack()
@@ -40,7 +52,7 @@ class UI:
         self._current_view = CreateUserView(
             self._root,
             self._show_login_view,
-            self.foodservice
+            self.food_service
         )
 
         self._current_view.pack()
@@ -52,14 +64,18 @@ class UI:
             self._root,
             self._show_login_view,
             self._show_after_new_added,
-            self.foodservice
+            self.food_service
         )
 
         self._current_view.pack()
 
+    # TODO: after_login
     def _show_after_new_added(self, ingredient, date, username):
-        converted_date = self.foodservice.convert_expire_date(date)
+        converted_date = self.food_service.convert_expire_date(date)
         today = int(time.time())
-        self.foodservice.add_ingredient(today, ingredient, converted_date, username)
+        try:
+            self.food_service.add_ingredient(today, ingredient, converted_date, username)
+        except ValueError:
+            print('value not correct')
 
         self._show_after_login_view()

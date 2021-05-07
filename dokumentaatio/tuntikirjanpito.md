@@ -40,6 +40,8 @@
 | 5.5. | 1 | koodin laatu |
 | | 1,5 | merkitseminen ja testit |
 | | 0,5 | testikanta |
+| 7.5. | 1 | testien bugeja |
+| | 1 | dokumentaatiota ja koodin laatu |
 
 
-Tunnit yhteensä: 44,5h
+Tunnit yhteensä: 46,5h

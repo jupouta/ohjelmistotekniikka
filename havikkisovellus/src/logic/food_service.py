@@ -68,6 +68,7 @@ class FoodService:
     def log_out(self):
         self.user = None
 
+    # TODO: Error handling
     def convert_expire_date(self, date):
         """Convert the given expire date to timestamp format (integer).
         Check that the date conforms to the format 'dd/mm/yyyy'.
@@ -127,7 +128,7 @@ class FoodService:
 
         ingredients = []
         for row in data:
-            ingr_id, ingr, date_added, date_expires, used = row[0], row[1], row[2], row[3], row[4]
+            ingr_id, date_added, ingr, date_expires, used = row[0], row[1], row[2], row[3], row[4]
             ingredient = Ingredient(ingr_id, ingr, date_added, date_expires, used)
             if expire:
                 if ingredient.is_close_to_perishing() and not ingredient.is_used():

@@ -23,6 +23,10 @@ class TestIngredient(unittest.TestCase):
         ingredient = Ingredient(1, 'omena', 1618207606, 1619097453)
         self.assertEqual(ingredient.get_content(), 'omena')
 
+    def test_get_id(self):
+        ingredient = Ingredient(1, 'omena', 1618207606, 1619097453)
+        self.assertEqual(ingredient.get_id(), 1)
+
     def test_string(self):
         ingredient = Ingredient(1, 'omena', 1618207606, 1618207606)
         self.assertEqual(ingredient.__str__(), 'omena: added 2021-04-12, expires 2021-04-12, not eaten yet')
