@@ -1,3 +1,4 @@
+"""Class and methods for handling all the database transactions."""
 from database.database_connect import get_database_connection
 
 class Database:
@@ -16,32 +17,55 @@ class Database:
         self._initialize()
 
     def _initialize(self):
+        """Initialize the database.
+        Add a test user to the database, if not already there."""
         if not self.get_user('testi'):
             self._cursor.execute('''
                insert into users (username, password) values ('testi', 'salis');
             ''')
         self._connection.commit()
 
-    def get_all_ingredients_by_a_user(self, user):
+    def get_all_ingredients_by_a_user(self, username):
+        """Return all the ingredients a user has added.
+        Args:
+            username: The user's username.
+        Returns: A list of the user's ingredients."""
         self._cursor.execute(
             "select id, date, ingredient, exp_date, used from food where username=?;",
-                            (user, ))
+                            (username, ))
         ingredients = self._cursor.fetchall()
         return ingredients
 
     def get_user(self, username):
+        """Return the user with the given username.
+        Args:
+            username: The user's username.
+        Returns: The found username and password."""
         self._cursor.execute("select username, password from users where username=?;",
                               (username, ))
         user = self._cursor.fetchone()
         return user
 
     def add_user(self, username, password):
+        """Add a user with given username and password to the database.
+
+        Args:
+            username: The username for the user.
+            password: The password for the user."""
         self._cursor.execute('''
             insert into users (username, password) values (?, ?);''',
             (username, password))
         self._connection.commit()
 
     def find_ingredient(self, username, ingredient_id):
+        """Find the user's ingredient with given ingredient id (in the database).
+        Return the found ingredient.
+
+        Args:
+            username: The user's username.
+            ingredient_id: The id for the ingredient in the database.
+        Returns:
+            The found ingredient."""
         self._cursor.execute(
             '''select id, date, ingredient, exp_date, used, username from food
             where username=? and id=?;''', (username, ingredient_id))
@@ -49,6 +73,11 @@ class Database:
         return ingredient
 
     def mark_ingredient_as_eaten(self, username, ingredient_id):
+        """Mark the given ingredient as eaten.
+
+        Args:
+            username: The user's username.
+            ingredient_id: The id of the ingredient to be marked."""
         self._cursor.execute(
             '''update food
             set used=1

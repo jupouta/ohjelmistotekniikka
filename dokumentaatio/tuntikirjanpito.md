@@ -42,6 +42,8 @@
 | | 0,5 | testikanta |
 | 7.5. | 1 | testien bugeja |
 | | 1 | dokumentaatiota ja koodin laatu |
+| 10.5. | 0,5 | error lisääminen|
+| | 2 | koodin parannusta |
 
 
-Tunnit yhteensä: 46,5h
+Tunnit yhteensä: 49h

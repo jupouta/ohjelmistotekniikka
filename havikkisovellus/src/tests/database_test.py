@@ -45,5 +45,13 @@ class TestDatabase(unittest.TestCase):
 
         self.assertEqual(ingredient[4], 1)
 
+    def test_find_ingredient(self):
+        self.database.insert_a_new_ingredient(1619778769, 'tomaatti', 1619778769, 'testi')
+        ingredient = self.database.find_ingredient('testi', 1)
+        self.assertTrue(ingredient)
+
+        ingredient = self.database.find_ingredient('testi', 2)
+        self.assertFalse(ingredient)
+
     def tearDown(self):
         self.database.delete_all()

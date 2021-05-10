@@ -66,9 +66,9 @@ class FoodService:
         return True
 
     def log_out(self):
+        """Log out the user, i.e. replace user with None."""
         self.user = None
 
-    # TODO: Error handling
     def convert_expire_date(self, date):
         """Convert the given expire date to timestamp format (integer).
         Check that the date conforms to the format 'dd/mm/yyyy'.
