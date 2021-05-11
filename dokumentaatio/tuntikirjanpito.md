@@ -44,6 +44,7 @@
 | | 1 | dokumentaatiota ja koodin laatu |
 | 10.5. | 0,5 | error lisääminen|
 | | 2 | koodin parannusta |
+| 11.5. | 1,5 | dokumentaatio |
 
 
-Tunnit yhteensä: 49h
+Tunnit yhteensä: 50,5h

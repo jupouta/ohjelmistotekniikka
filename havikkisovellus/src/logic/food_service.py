@@ -39,13 +39,21 @@ class FoodService:
         user_retrieved = self.database.get_user(given_username)
         if user_retrieved:
             username, password = user_retrieved[0], user_retrieved[1]
-            self.user = User(username, password)
             if given_password == password:
+                self.log_in(username, password)
                 return True
         return False
 
+    def log_in(self, username, password):
+        """Log the user in, i.e. set self.user to User with given username and password.
+
+        Args:
+            username: The user's username.
+            password: The user's password."""
+        self.user = User(username, password)
+
     def get_user(self):
-        """Return the user loggied in in this session.
+        """Return the user logged in in this session.
         Returns:
             The user in this session."""
         return self.user

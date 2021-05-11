@@ -19,11 +19,9 @@ Ennen ohjelman ajamista poetryn riippuvuudet täytyy asentaa. Aja komento `poetr
 ### Ohjelman suorittaminen
 Ohjelma toimii ajamalla `poetry run invoke start` _havikkisovellus_-kansiossa. Ohjelman ajamiseen voi käyttää myös poetryn virtuaaliympäristöä komennolla `poetry shell`.
 
-Ohjelma toimii ilman poetrya (Python-versio 3.6+) komennolla `python src/index.py` tai vaihtoehtoisesti `python3 src/index.py`.
-
 Ohjelman testaamiseen voi käyttää kirjautumisessa käyttäjää `testi` ja tälle salasanaa `salis`.
 
-HUOM! Yksikkötestit ajettaessa kaikki aiemmat tiedot poistetaan.
+(Ohjelma toimii ilman poetrya (Python-versio 3.6+) komennolla `python src/index.py` tai vaihtoehtoisesti `python3 src/index.py`. Tällöin moduuli `dotenv` täytyy olla asennettuna.)
 
 ### Testaus
 Yksikkötestit saa ajettua komennolla `poetry run invoke test`.

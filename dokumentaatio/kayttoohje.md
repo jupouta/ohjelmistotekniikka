@@ -2,10 +2,21 @@
 
 Viimeisimmän releasen saa ladattua projektin juuresta _Releases_-kohdasta.
 
+## Konfigurointi
+Tietojen tallennus voidaan konfiguroida _.env_-tiedostossa, asettamalla sqlite-tiedoston nimi `DATA_FILENAME` halutunlaiseksi. Tiedoston tulee sijaita _data_-kansiossa. Esimerkiksi:
+
+```
+DATA_FILENAME=data/esimerkki.sqlite
+```
+
 ## Asennus
 Ennen ohjelman ajamista poetryn riippuvuudet täytyy asentaa. Aja komento `poetry install` _havikkisovellus_-kansiossa.
 
-Nyt ohjelma pitäisi pystyä ajamaan _havikkisovellus_-kansiossa komennolla `poetry run invoke start`.
+Nyt ohjelma pitäisi pystyä ajamaan _havikkisovellus_-kansiossa komennolla
+
+```
+poetry run invoke start
+```
 
 ## Kirjautuminen
 Sovellus avautuu automaattisesti kirjautumisnäkymään. Kirjautuminen onnistuu kirjoittamalla käyttäjätunnus ja salasana niille varattuihin kenttiin ja painamalla _Enter login_.
