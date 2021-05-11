@@ -72,9 +72,11 @@ class TestFoodService(unittest.TestCase):
         self.assertTrue(self.food_service.add_user('testi1', 'salis'))
 
     def test_log_in_and_log_out(self):
+        user = self.food_service.get_user()
+        self.assertIsNone(user)
+
         self.food_service.log_in('testi', 'salis')
         user = self.food_service.get_user()
-
         self.assertIsNotNone(user)
         self.assertEqual(user.get_username(), 'testi')
         self.assertEqual(user.get_password(), 'salis')

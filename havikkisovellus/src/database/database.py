@@ -88,9 +88,7 @@ class Database:
         self._cursor.execute(
             "insert into food (date, ingredient, exp_date, username) values (?, ?, ?, ?);",
                             (date, ingredient, expire_date, username))
-        ingr = self._cursor.fetchone()
         self._connection.commit()
-        return ingr
 
     def delete_users(self):
         self._cursor.execute('delete from users;')

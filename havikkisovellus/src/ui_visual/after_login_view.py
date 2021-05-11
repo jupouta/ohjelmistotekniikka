@@ -106,7 +106,7 @@ class AfterLoginView:
     def _create_add_ingredients_elements(self):
         """Create entries for adding ingredients:
         - 'Ingredient' field
-        - 'Expire date'  field."""
+        - 'Expire date' field."""
         i = 3
         ingredient_label = ttk.Label(master=self._frame, text="Ingredient:")
         ingredient_label.grid(row=i, column=0, padx=5, pady=5)
