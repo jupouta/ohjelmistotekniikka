@@ -1,7 +1,11 @@
+"""Initialize the SQLite databases."""
 from database.database_connect import get_database_connection
 from config import ENVIRONMENT
 
 def drop_tables(connection):
+    """Get rid of the two tables in the database.
+    Args:
+        connection: Connection to the database."""
     cursor = connection.cursor()
 
     cursor.execute('''
@@ -14,6 +18,9 @@ def drop_tables(connection):
     connection.commit()
 
 def create_tables(connection):
+    """Create the two tables in the database.
+    Args:
+        connection: Connection to the database."""
     cursor = connection.cursor()
 
     cursor.execute('''
@@ -40,12 +47,11 @@ def create_tables(connection):
     connection.commit()
 
 def initialize_database():
+    """Initialize the database connection and create the needed tables."""
     connection = get_database_connection()
     if ENVIRONMENT == 'test':
         drop_tables(connection)
     create_tables(connection)
 
-    #connection.close()
-
-#if __name__ == '__main__':
-#    initialize()
+if __name__ == '__main__':
+    initialize_database()

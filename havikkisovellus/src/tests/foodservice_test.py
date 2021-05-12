@@ -68,8 +68,11 @@ class TestFoodService(unittest.TestCase):
         self.assertFalse(self.food_service.check_username('ei', 'salis'))
 
     def test_add_user(self):
-        self.assertFalse(self.food_service.add_user('testi', 'salis'))
+        self.assertFalse(self.food_service.add_user('testi', 'salis'))  # already exists
         self.assertTrue(self.food_service.add_user('testi1', 'salis'))
+        self.assertFalse(self.food_service.add_user('', 'salis'))
+        self.assertFalse(self.food_service.add_user('testi', ''))
+        self.assertFalse(self.food_service.add_user('', ''))
 
     def test_log_in_and_log_out(self):
         user = self.food_service.get_user()

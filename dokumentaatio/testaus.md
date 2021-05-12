@@ -12,6 +12,13 @@ Luokan `Ingredient` testeissä on testattu luokan metodeja `TestIngredient`-test
 ### Testauskattavuus
 Testauksen haarautumakattavuus on 97%.
 
-_initialize\_database.py_- ja _config.py_-tiedostot olisi voinut jättää testauksen ulkopuolelle, sillä niitä ei varsinaisesti testata.
+![Haarautumakattavuus](https://github.com/jupouta/ohjelmistotekniikka/blob/master/dokumentaatio/kuvat/haarautumakattavuus.png)
+
+Tiedostojen _database.py_ ja _initialize\_database.py_ puuttuvat testiosuudet johtuvat testauksen vaatimuksista (käyttäjän 'testi' lisääminen sekä testiympäristönä on 'TEST').
+
+_initialize\_database.py_- ja _config.py_-tiedostot olisi voinut jättää testauksen ulkopuolelle, sillä niitä ei varsinaisesti voi testata, mutta niitä on testattu järjestelmätasolla.
 
 ## Järjestelmätestaus
+Järjestelmätestausta on suoritettu manuaalisesti. Kaikkia toiminnallisuuksia on testattu, ja kaikista on yritetty löytää mahdolliset ongelmat, kuten tyhjän käyttäjänimen lisääminen.
+
+Tietokantatiedostoa on testattu sekä niin, että tiedosto on poistettu, että sen ollessa paikallaan.

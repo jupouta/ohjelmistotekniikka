@@ -138,10 +138,12 @@ class AfterLoginView:
         msg_var_label = ttk.Label(master=self._frame, textvariable=self._message_var)
         msg_var_label.grid(column=1)
 
-    def _delete_entry_txt_field(self):
-        """Delete all the text in the ingredient and date fields."""
+    def _delete_txt_fields_and_msg(self):
+        """Delete all the text in the ingredient and date fields,
+        and set the error message to empty."""
         self._ingredient.delete(0, constants.END)
         self._date.delete(0, constants.END)
+        self._message_var.set('')
 
     def _handle_add_new_ingredient(self):
         """Handle adding a new ingredient. Convert the date into an integer, and
@@ -156,7 +158,7 @@ class AfterLoginView:
                                             converted_date, username)
 
             self._show_ingredient_list()
-            self._delete_entry_txt_field()
+            self._delete_txt_fields_and_msg()
         except ValueError:
             self._message_var.set("Use the correct form of date: dd/mm/yyyy.")
 

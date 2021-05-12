@@ -67,6 +67,10 @@ class FoodService:
         Returns:
             Boolean value indicating if the new username is accepted.
             If it already exists, False is returned."""
+        if username == '':
+            return False
+        if password == '':
+            return False
         user = self.database.get_user(username)
         if user:
             return False

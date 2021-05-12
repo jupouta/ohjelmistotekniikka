@@ -60,7 +60,7 @@ class CreateUserView:
         if self.food_service.add_user(username, password):
             self._handle_create_user()
         else:
-            self._message_var.set('Username already found!')
+            self._message_var.set('Username already found or something weird happened!')
 
     def _create_user_button(self):
         """Create the 'Create user' button.

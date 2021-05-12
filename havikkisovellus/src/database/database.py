@@ -85,22 +85,33 @@ class Database:
         self._connection.commit()
 
     def insert_a_new_ingredient(self, date, ingredient, expire_date, username):
+        """Add a new ingredient to the database for the user.
+
+        Args:
+            date: The date the ingredient is added.
+            ingredient: The name of the ingredient.
+            expire_date: The expire date of the ingredient.
+            username: The username of the user adding the ingredient."""
         self._cursor.execute(
             "insert into food (date, ingredient, exp_date, username) values (?, ?, ?, ?);",
                             (date, ingredient, expire_date, username))
         self._connection.commit()
 
     def delete_users(self):
+        """Delete all the users from the table 'users'."""
         self._cursor.execute('delete from users;')
         self._connection.commit()
 
     def delete_ingredients(self):
+        """Delete all the ingredients from the table 'food'."""
         self._cursor.execute('delete from food;')
         self._connection.commit()
 
     def delete_all(self):
+        """Delete all the data in both tables (users and food)."""
         self.delete_ingredients()
         self.delete_users()
 
     def stop_service(self):
+        """Stop the connection to the database."""
         self._connection.close()

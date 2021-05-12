@@ -18,6 +18,8 @@ Sovelluksella on tällä hetkellä vain yksi käyttäjärooli, normaali käyttä
 
 
 ### Jatkokehitysideoita
+- Ruoka-ainesten, joiden päivämäärä on jo mennyt, esittäminen korostetummin
+- Kaikkien (ei vielä vanhenevien ja vanhenevien) ainesten listaaminen
 - Listalle lisättyjen ruoka-ainesten tietojen muokkaus (esim. vanhenemispäivän muuttaminen)
 - Reseptien liittäminen tiettyihin ruoka-aineksiin
 - Ruoka-ainesta lisättäessä voisi olla kenttä, johon annetaan lisätietoa aineksesta
