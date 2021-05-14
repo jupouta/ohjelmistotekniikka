@@ -59,4 +59,4 @@ Kun käyttäjä klikkaa nappia _Create user_, käyttöliittymä kutsuu ```FoodSe
 
 ## Ohjelman puutteet
 
-Joissakin luokissa on liikaa instanssimuuttuja (instance variables)
+Joissakin luokissa on liikaa instanssimuuttujia (instance variables).

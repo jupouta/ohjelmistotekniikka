@@ -1,3 +1,4 @@
+"""The main file of the program that starts the program."""
 from tkinter import Tk
 
 from database.database import Database
@@ -7,6 +8,8 @@ from ui_visual.ui import UI
 from logic.food_service import FoodService
 
 def main():
+    """Main function of the program.
+    Start the program from here."""
     initialize_database()
 
     database = Database()
@@ -15,8 +18,8 @@ def main():
     window = Tk()
     window.title("Food Waste App")
 
-    ui = UI(window, foodservice)
-    ui.start()
+    ui_base = UI(window, foodservice)
+    ui_base.start()
 
     window.mainloop()
 

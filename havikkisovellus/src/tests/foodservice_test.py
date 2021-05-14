@@ -53,7 +53,7 @@ class TestFoodService(unittest.TestCase):
         self.food_service.database.db = []
 
     def test_add_ingredient(self):
-        self.food_service.add_ingredient(1618207606, 'omena', 1617176770)
+        self.food_service.add_ingredient(1618207606, 'omena', 1617176770, 'testi')
         self.assertEqual(len(self.food_service.database.get_all()), 1)
 
     def test_list_added_ingredients(self):

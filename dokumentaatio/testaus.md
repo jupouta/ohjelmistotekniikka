@@ -10,7 +10,7 @@ Luokan `Ingredient` testeissä on testattu luokan metodeja `TestIngredient`-test
 
 
 ### Testauskattavuus
-Testauksen haarautumakattavuus on 97%.
+Testauksen haarautumakattavuus on 96%.
 
 ![Haarautumakattavuus](https://github.com/jupouta/ohjelmistotekniikka/blob/master/dokumentaatio/kuvat/haarautumakattavuus.png)
 

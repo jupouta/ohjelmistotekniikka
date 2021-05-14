@@ -1,7 +1,9 @@
 """Class and methods for listing the ingredients in the UI."""
 from tkinter import ttk, constants, IntVar, StringVar
 
-class IngredientsView:
+from ui_visual.ui_frame import UIFrame
+
+class IngredientsView(UIFrame):
     """Class for listing the ingredients in the UI.
 
     Attributes:
@@ -39,15 +41,9 @@ class IngredientsView:
 
         self._ingredient_elems = []
 
+        super().__init__(self._frame)
+
         self._initialize()
-
-    def pack(self):
-        """Fill the frame with elements."""
-        self._frame.pack(fill=constants.X)
-
-    def destroy(self):
-        """Destroy and delete all the elements in the frame."""
-        self._frame.destroy()
 
     def _create_mark_button(self):
         """Create the 'Mark as eaten' button.

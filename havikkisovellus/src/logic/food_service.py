@@ -98,7 +98,7 @@ class FoodService:
             perishable_date = time.mktime(datetime.datetime.strptime(date, "%d/%m/%Y").timetuple())
         return int(perishable_date)
 
-    def add_ingredient(self, date, ingredient, expire_date, username='testi'):
+    def add_ingredient(self, date, ingredient, expire_date, username):
         """Add a new ingredient to the database.
 
         Args:
@@ -106,11 +106,10 @@ class FoodService:
                 The date when the ingredient has been added in timestamp format (integer).
             ingredient: The name of the ingredient.
             expire_date: The date when the ingredient will expire.
-            username: The user's username. If not given, 'testi' will be used.
+            username: The user's username.
         """
         self.database.insert_a_new_ingredient(date, ingredient, expire_date, username)
 
-    # TODO: self.user
     def mark_ingredient_as_eaten(self, username, ingredient_id):
         """Mark an ingredient as used.
         Return the marked ingredient for further use.

@@ -2,9 +2,11 @@
 import time
 
 from tkinter import ttk, constants, Message, StringVar
-from ui_visual.ingredients_view import IngredientsView
 
-class AfterLoginView:
+from ui_visual.ingredients_view import IngredientsView
+from ui_visual.ui_frame import UIFrame
+
+class AfterLoginView(UIFrame):
     """Class for the UI view after logging in.
 
     Attributes:
@@ -51,15 +53,9 @@ class AfterLoginView:
         self._ingredients_view = None
         self._message_var = None
 
+        super().__init__(self._frame)
+
         self._initialize()
-
-    def pack(self):
-        """Fill the frame with elements."""
-        self._frame.pack(fill=constants.X)
-
-    def destroy(self):
-        """Destroy and delete all the elements in the frame."""
-        self._frame.destroy()
 
     def _handle_mark(self, ingredient_elements):
         """Mark the checked ingredients as used,

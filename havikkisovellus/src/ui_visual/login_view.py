@@ -1,8 +1,10 @@
 """Class and methods for the login view."""
 from tkinter import ttk, constants, StringVar
 
+from ui_visual.ui_frame import UIFrame
 
-class LoginView:
+
+class LoginView(UIFrame):
     """Class for the UI view for logging in.
 
     Attributes:
@@ -45,15 +47,9 @@ class LoginView:
         self._username = None
         self._password = None
 
+        super().__init__(self._frame)
+
         self._initialize()
-
-    def pack(self):
-        """Fill the frame with elements."""
-        self._frame.pack(fill=constants.X)
-
-    def destroy(self):
-        """Destroy and delete all the elements in the frame."""
-        self._frame.destroy()
 
     def _handle_login(self):
         """Handle the logging in.

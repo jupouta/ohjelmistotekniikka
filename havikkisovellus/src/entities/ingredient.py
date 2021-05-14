@@ -5,9 +5,10 @@ class Ingredient:
     """Class that holds the ingredient information.
 
     Attributes:
+        ingr_id: Ingredient's id in the database.
         content: Ingredient's name.
         date_added: The date the ingredient was added to the database.
-        date_preserves: The date the ingredient will expire.
+        date_expires: The date the ingredient will expire.
         used: If the ingredient is used already.
     """
 

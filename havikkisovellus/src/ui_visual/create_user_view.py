@@ -1,7 +1,9 @@
 """Class and methods for creating a user in the UI."""
 from tkinter import ttk, constants, StringVar
 
-class CreateUserView:
+from ui_visual.ui_frame import UIFrame
+
+class CreateUserView(UIFrame):
     """Class for listing the ingredients in the UI.
 
     Attributes:
@@ -11,10 +13,10 @@ class CreateUserView:
             The method for refreshing the view when a new user is created.
         food_service:
             The service class for handling all the logic between the UI and the database.
-        frame:
-            The frame to which elements are attached.
         message_var:
             The message to show in the window.
+        frame:
+            The frame to which elements are attached.
         username:
             The username field for creating a user.
         password:
@@ -41,15 +43,9 @@ class CreateUserView:
         self._username = None
         self._password = None
 
+        super().__init__(self._frame)
+
         self._initialize()
-
-    def pack(self):
-        """Fill the frame with elements."""
-        self._frame.pack(fill=constants.X)
-
-    def destroy(self):
-        """Destroy and delete all the elements in the frame."""
-        self._frame.destroy()
 
     def _create_user(self):
         """Create a user with the given username and password.

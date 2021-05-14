@@ -46,6 +46,7 @@
 | | 2 | koodin parannusta |
 | 11.5. | 2 | dokumentaatio |
 | 12.5. | 1,5 | dokumentaatio |
+| 14.5. | 1,5 | korjauksia|
 
 
-Tunnit yhteensä: 52,5h
+Tunnit yhteensä: 54h
