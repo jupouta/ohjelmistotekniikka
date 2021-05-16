@@ -11,6 +11,7 @@ Sovelluksen avulla käyttäjä voi vähentää ruoasta syntyvää hävikkiä. So
 - [Käyttöohje](https://github.com/jupouta/ohjelmistotekniikka/blob/master/dokumentaatio/kayttoohje.md)
 - [Release 1](https://github.com/jupouta/ohjelmistotekniikka/releases/tag/viikko5)
 - [Release 2](https://github.com/jupouta/ohjelmistotekniikka/releases/tag/viikko6)
+- [Final release](https://github.com/jupouta/ohjelmistotekniikka/releases/tag/loppupalautus)
 
 ## Ohjeet
 
